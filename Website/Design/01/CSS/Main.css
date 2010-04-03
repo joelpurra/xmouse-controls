@@ -1,6 +1,7 @@
 body
 {
 	font-family: Segoe UI, Verdana, Sans-Serif;
+	line-height: 1.3em;
 }
 div#wrapper
 {
@@ -38,6 +39,14 @@ div#features h3
 {
 	margin: 0;
 	margin-top: 0.25em;
+}
+ul li
+{
+	margin-bottom: 0.5em;
+}
+p.minorImportance
+{
+	font-size: x-small;
 }
 div#footer
 {

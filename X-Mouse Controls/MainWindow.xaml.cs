@@ -16,58 +16,58 @@ namespace X_Mouse_Controls
         public MainWindow()
         {
             InitializeComponent();
+
+            windowTrackingValues = new WindowTrackingValues();
+
+            this.DataContext = windowTrackingValues;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void GetValues()
         {
             // Defaults to be overwritten when reading system settings
-            bool activateWindowTracking = false;
-            bool activeWindowRaising = false;
-            uint activeWindowTrkTimeout = 500;
+            bool windowTrackingIsEnabled = false;
+            bool windowRaisingIsEnabled = false;
+            uint activeWindowTrkTimeout = (uint)WindowTrackingValues.DefaultDelay;
 
             // Values are read by passing a constant value and a reference to a corresponding datatype
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWINDOWTRACKING, 0, ref activateWindowTracking, 0);
+                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWINDOWTRACKING, 0, ref windowTrackingIsEnabled, 0);
             }
             catch
             {
                 MessageBox.Show("Failed to read active window tracking value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWNDTRKZORDER, 0, ref activeWindowRaising, 0);
+                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWNDTRKZORDER, 0, ref windowRaisingIsEnabled, 0);
             }
             catch
             {
                 MessageBox.Show("Failed to read active window raising value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
             try
             {
                 Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWNDTRKTIMEOUT, 0, ref activeWindowTrkTimeout, 0);
             }
             catch
             {
-                MessageBox.Show("Failed to read active window tracking timeout value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Failed to read active window tracking delay value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
-            // Updating the interface controls
-            activeWindowTrackingCheckbox.IsChecked = activateWindowTracking;
-            activeWindowRaisingCheckbox.IsChecked = activeWindowRaising;
-            activeWindowTrkTimeoutSlider.Value = (double)activeWindowTrkTimeout;
+            windowTrackingValues.IsTrackingEnabled = windowTrackingIsEnabled;
+            windowTrackingValues.IsRaisingEnabled = windowRaisingIsEnabled;
+            windowTrackingValues.Delay = activeWindowTrkTimeout;
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void SetValues()
         {
-            // Parsing the interface controls
-            bool activateWindowTracking = (activeWindowTrackingCheckbox.IsChecked == true);
-            bool activeWindowRaising = (activeWindowRaisingCheckbox.IsChecked == true);
-            uint activeWindowTrkTimeout = (uint)activeWindowTrkTimeoutSlider.Value;
-
             // Saving values
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWINDOWTRACKING, 0, activateWindowTracking, 1);
+                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWINDOWTRACKING, 0, windowTrackingValues.IsTrackingEnabled, 1);
             }
             catch
             {
@@ -75,7 +75,7 @@ namespace X_Mouse_Controls
             }
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKZORDER, 0, activeWindowRaising, 1);
+                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKZORDER, 0, windowTrackingValues.IsRaisingEnabled, 1);
             }
             catch
             {
@@ -83,11 +83,11 @@ namespace X_Mouse_Controls
             }
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKTIMEOUT, 0, activeWindowTrkTimeout, 1);
+                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKTIMEOUT, 0, (uint)windowTrackingValues.Delay, 1);
             }
             catch
             {
-                MessageBox.Show("Failed to set active window tracking timeout value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Failed to set active window tracking delay value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -100,15 +100,28 @@ namespace X_Mouse_Controls
             e.Handled = true;
         }
 
-        private void activeWindowTrackingCheckbox_Checked(object sender, RoutedEventArgs e)
+        #region Events
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            activeWindowRaisingCheckbox.IsEnabled = true;
-            activeWindowTrkTimeoutSlider.IsEnabled = true;
+            GetValues();
         }
-        private void activeWindowTrackingCheckbox_Unchecked(object sender, RoutedEventArgs e)
+
+        private void applyButton_Click(object sender, RoutedEventArgs e)
         {
-            activeWindowRaisingCheckbox.IsEnabled = false;
-            activeWindowTrkTimeoutSlider.IsEnabled = false;
+            SetValues();
         }
+
+        private void delayTextbox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            uint delay = (uint)WindowTrackingValues.DefaultDelay;
+
+            if (!uint.TryParse(delayTextbox.Text, out delay))
+            {
+                delayTextbox.Text = delay.ToString();
+            }
+        }
+        #endregion
+
+        private readonly WindowTrackingValues windowTrackingValues;
     }
 }
