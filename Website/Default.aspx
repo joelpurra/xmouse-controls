@@ -107,7 +107,7 @@
         <h2>
             History and downloads</h2>
         <dl>
-            <dt>2010-03-13 00:00 1.0.1.0 <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.7z">
+            <dt>2010-04-03 11:55 1.0.1.0 <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.7z">
                 Release</a> <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.7z">
                     Debug</a> <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.7z">
                         Source</a></dt>
