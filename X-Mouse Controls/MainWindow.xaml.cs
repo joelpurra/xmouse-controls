@@ -99,5 +99,16 @@ namespace X_Mouse_Controls
             Process.Start(new ProcessStartInfo(uri.ToString()));
             e.Handled = true;
         }
+
+        private void activeWindowTrackingCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            activeWindowRaisingCheckbox.IsEnabled = true;
+            activeWindowTrkTimeoutSlider.IsEnabled = true;
+        }
+        private void activeWindowTrackingCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            activeWindowRaisingCheckbox.IsEnabled = false;
+            activeWindowTrkTimeoutSlider.IsEnabled = false;
+        }
     }
 }

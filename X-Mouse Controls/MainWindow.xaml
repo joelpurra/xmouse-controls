@@ -4,7 +4,7 @@
     Title="X-Mouse Controls" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Loaded="Window_Loaded" Topmost="True" Margin="3" WindowStartupLocation="CenterScreen">
     <StackPanel Name="stackPanel1" VerticalAlignment="Center" Margin="25" Width="200">
 
-        <CheckBox Height="16" Name="activeWindowTrackingCheckbox" Margin="3">Activate window tracking</CheckBox>
+        <CheckBox Height="16" Name="activeWindowTrackingCheckbox" Margin="3" Checked="activeWindowTrackingCheckbox_Checked" Unchecked="activeWindowTrackingCheckbox_Unchecked">Activate window tracking</CheckBox>
         <CheckBox Height="16" Name="activeWindowRaisingCheckbox" Margin="3">Activate window raising</CheckBox>
         <Slider Height="21" Name="activeWindowTrkTimeoutSlider" Margin="3" AutoToolTipPlacement="BottomRight" Maximum="5000" SmallChange="500" LargeChange="1000" TickPlacement="BottomRight" Padding="10" TickFrequency="500"/>
         <Button Height="23" Name="button1" Width="75" Click="button1_Click" Margin="3">Save</Button>
@@ -13,7 +13,7 @@
             <StackPanel Name="stackPanel2" VerticalAlignment="Center">
                 <TextBlock TextWrapping="WrapWithOverflow" Margin="3" Padding="3">A tool to enable or disable active window tracking, raising and also the delay in milliseconds. This is known as x-mouse behavior.</TextBlock>
                 <TextBlock TextWrapping="WrapWithOverflow" Margin="3" Padding="3">Changes may not come in effect until logging off or rebooting.</TextBlock>
-                <TextBlock TextWrapping="WrapWithOverflow" Margin="3" Padding="3">Coded a late night in December of 2007 by Joel Purra<LineBreak/><Hyperlink NavigateUri="http://deathrow1.se/" TargetName="_blank" RequestNavigate="Hyperlink_RequestNavigate">http://deathrow1.se/</Hyperlink></TextBlock>
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="3" Padding="3">Coded a late night in December of 2007 by Joel Purra<LineBreak/><Hyperlink NavigateUri="http://deathrow1.se/Projects/X-Mouse_Controls/" TargetName="_blank" RequestNavigate="Hyperlink_RequestNavigate">http://deathrow1.se/Projects/X-Mouse_Controls/</Hyperlink></TextBlock>
             </StackPanel>
         </Expander>
     </StackPanel>

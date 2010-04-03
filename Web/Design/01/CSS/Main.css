@@ -1,0 +1,48 @@
+body
+{
+	font-family: Segoe UI, Verdana, Sans-Serif;
+}
+div#wrapper
+{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+img#logo
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+h1
+{
+	text-align: center;
+}
+h2
+{
+	border-bottom-color: Black;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+div#features
+{
+}
+div.feature
+{
+}
+div#features p
+{
+	margin: 0;
+	margin-bottom: 0.25em;
+}
+div#features h3
+{
+	margin: 0;
+	margin-top: 0.25em;
+}
+div#footer
+{
+	font-size: x-small;
+	border-top-color: Black;
+	border-top-width: 1px;
+	border-top-style: solid;
+}
