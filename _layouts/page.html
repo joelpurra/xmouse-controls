@@ -1,0 +1,13 @@
+---
+layout: bare
+---
+<head>
+	<title>{{ site.projectName }}: {{ page.title | xml_escape }}</title>
+</head>
+<body>
+	<h1>
+		<a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
+	</h1>
+	{{ content }}
+{% include ga.html %}
+</body>
