@@ -101,12 +101,15 @@
         <h2>
             Source code</h2>
         <p>
-            I've release the full sourcecode, including this webpage and original graphics.
-            It is free to use and modify - if I'm notified of all public releases that stem
-            from this work.</p>
+            I've release the full sourcecode, including this webpage and original graphics under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>. You can find the <a href="http://joelpurra.github.com/xmouse-controls/">source code on github</a>. Contributions are welcome!
+        </p>
         <h2>
             History and downloads</h2>
         <dl>
+            <dt>2012-08-12 20:30 1.0.1.0 <a href="http://joelpurra.github.com/xmouse-controls/">Source</a></dt>
+            <dd>
+                No changes, but the <a href="http://joelpurra.github.com/xmouse-controls/">source code is now release on github</a> under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.<br />
+            </dd>
             <dt>2010-04-03 11:55 1.0.1.0 <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.7z">
                 Release</a> <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.7z">
                     Debug</a> <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.7z">
