@@ -18,7 +18,7 @@
         <Expander Header="Information" Margin="3">
             <StackPanel VerticalAlignment="Center">
                 <TextBlock TextWrapping="WrapWithOverflow" Margin="3" Padding="3">A tool to enable or disable active window tracking, raising and also the delay in milliseconds. This is known as x-mouse behavior.</TextBlock>
-                <TextBlock TextWrapping="WrapWithOverflow" Margin="3" Padding="3">Originally coded a late night in December of 2007 by Joel Purra<LineBreak/><Hyperlink NavigateUri="http://joelpurra.se/Projects/X-Mouse_Controls/" TargetName="_blank" RequestNavigate="Hyperlink_RequestNavigate">http://joelpurra.se/Projects/X-Mouse_Controls/</Hyperlink></TextBlock>
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="3" Padding="3">Originally coded a late night in December of 2007 by Joel Purra<LineBreak/><Hyperlink NavigateUri="http://joelpurra.com/Projects/X-Mouse_Controls/" TargetName="_blank" RequestNavigate="Hyperlink_RequestNavigate">http://joelpurra.com/Projects/X-Mouse_Controls/</Hyperlink></TextBlock>
             </StackPanel>
         </Expander>
     </StackPanel>
