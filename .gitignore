@@ -1,5 +1,6 @@
 *.user
 *.suo
+*.userprefs
 [Oo]bj/
 [Bb]in/
 *.Cache
