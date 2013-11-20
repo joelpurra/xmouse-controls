@@ -11,3 +11,7 @@
 X-Mouse Controls copyright &copy; 2007, 2008, 2009, 2010, 2011, 2012 Joel Purra http://joelpurra.se/ All rights reserved.
 
 Released as free software under the GNU General Public License. See LICENSE.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/joelpurra/xmouse-controls/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
