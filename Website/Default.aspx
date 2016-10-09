@@ -95,8 +95,8 @@
                 If you use a version of Windows released prior to Windows Vista, it is recommended
                 to use Tweak UI, found in <a href="http://www.microsoft.com/windowsxp/downloads/powertoys/xppowertoys.mspx">
                     Microsoft PowerToys</a>.</li>
-            <li>Please link back to this page, <a href="http://joelpurra.com/Projects/X-Mouse_Controls/">
-                http://joelpurra.com/Projects/X-Mouse_Controls/</a> if you like and use this program.</li>
+            <li>Please link back to this page, <a href="https://joelpurra.com/Projects/X-Mouse_Controls/">
+                https://joelpurra.com/Projects/X-Mouse_Controls/</a> if you like and use this program.</li>
         </ul>
         <h2>
             Source code</h2>
@@ -136,7 +136,7 @@
         <h2>
             About the author</h2>
         <p>
-            <a href="http://joelpurra.se/">Joel Purra</a> is a coder and webmaster, working
+            <a href="https://joelpurra.se/">Joel Purra</a> is a coder and webmaster, working
             mainly on webshops and sometimes on his hobby projects. His prefered programming
             languages are JScript for classic ASP and C# for .NET-development. He is available
             for consulting work.
@@ -175,8 +175,8 @@ Delay=1
             activate/fix X-Mouse settings used by TweakUI.
         </p>
         <div id="footer">
-            <a href="http://joelpurra.com/Projects/X-Mouse_Controls/">X-Mouse Controls</a>. Originally
-            coded a late night in December of 2007 by <a href="http://joelpurra.se/">Joel Purra</a>.
+            <a href="https://joelpurra.com/Projects/X-Mouse_Controls/">X-Mouse Controls</a>. Originally
+            coded a late night in December of 2007 by <a href="https://joelpurra.se/">Joel Purra</a>.
         </div>
     </div>
     <script type="text/javascript">
