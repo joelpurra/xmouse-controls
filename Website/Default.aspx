@@ -110,24 +110,24 @@
             <dd>
                 No changes, but the <a href="http://joelpurra.github.com/xmouse-controls/">source code is now release on github</a> under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.<br />
             </dd>
-            <dt>2010-04-03 11:55 1.0.1.0 <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.7z">
-                Release</a> <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.7z">
-                    Debug</a> <a href="Files/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.7z">
+            <dt>2010-04-03 11:55 1.0.1.0 <a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.7z">
+                Release</a> <a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.7z">
+                    Debug</a> <a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.7z">
                         Source</a></dt>
             <dd>
                 Allows for manual input of the delay, new web site links, using more bindings.<br />
             </dd>
-            <dt>2007-12-27 16:19 1.0.0.1 <a href="Files/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_release.7z">
-                Release</a> <a href="Files/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_debug.7z">
-                    Debug</a> <a href="Files/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_source.7z">
+            <dt>2007-12-27 16:19 1.0.0.1 <a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_release.7z">
+                Release</a> <a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_debug.7z">
+                    Debug</a> <a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_source.7z">
                         Source</a></dt>
             <dd>
                 Disables the active window raising checkbox and delay slider when the active window
                 tracking checkbox is not checked.<br />
             </dd>
-            <dt>2007-12-27 14:04 1.0.0.0 <a href="Files/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_release.7z">
-                Release</a> <a href="Files/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_debug.7z">
-                    Debug</a> <a href="Files/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_source.7z">
+            <dt>2007-12-27 14:04 1.0.0.0 <a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_release.7z">
+                Release</a> <a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_debug.7z">
+                    Debug</a> <a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_source.7z">
                         Source</a></dt>
             <dd>
                 First version, initial release.<br />
