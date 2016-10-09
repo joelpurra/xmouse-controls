@@ -24,7 +24,7 @@
         <p>
             This behavior has been possible, but disabled, in different versions of Windows
             for years. It is usually enabled through Windows accesiblity settings or a wide
-            variety of tools, most notably Tweak UI found in <a href="http://www.microsoft.com/windowsxp/downloads/powertoys/xppowertoys.mspx">
+            variety of tools, most notably Tweak UI found in <a href="https://www.microsoft.com/windowsxp/downloads/powertoys/xppowertoys.mspx">
                 Microsoft PowerToys</a>. However, Tweak UI does not run on Windows&nbsp;Vista/Windows&nbsp;Server&nbsp;2008/Windows&nbsp;7/later,
             which is why I created this tool.</p>
         <h2>
@@ -78,7 +78,7 @@
         <h2>
             Notes</h2>
         <ul>
-            <li>Some applications, especially those with a <a href="http://en.wikipedia.org/wiki/Multiple_document_interface">
+            <li>Some applications, especially those with a <a href="https://en.wikipedia.org/wiki/Multiple_document_interface">
                 Multiple Document Interface</a>, may raise their own window even though the feature
                 is disabled. See work-around below.</li>
             <li>Some menus do not like the x-mouse behavior and close before you are able to reach
@@ -86,14 +86,14 @@
             <li>One way to avoid window raising and menu problems is to click and hold your left
                 mouse button on an empty (unresponsive) area, drag the cursor to where you want
                 to focus and let go.</li>
-            <li>Requires at least <a href="http://en.wikipedia.org/wiki/.NET_Framework_3.0#.NET_Framework_3.5">
-                .NET Framework 3.5</a> due to the fact that this was a small test to try out <a href="http://en.wikipedia.org/wiki/Windows_Presentation_Foundation">
+            <li>Requires at least <a href="https://en.wikipedia.org/wiki/.NET_Framework_3.0#.NET_Framework_3.5">
+                .NET Framework 3.5</a> due to the fact that this was a small test to try out <a href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation">
                     Windows Presentation Foundation.</a></li>
             <li>The releases do not require installation apart from unpacking. Please use <a
                 href="http://www.7-zip.org/">7-Zip</a> to unpack .7z files.</li>
             <li>Developed for Windows&nbsp;Vista/Windows&nbsp;Server&nbsp;2008/Windows&nbsp;7/later.
                 If you use a version of Windows released prior to Windows Vista, it is recommended
-                to use Tweak UI, found in <a href="http://www.microsoft.com/windowsxp/downloads/powertoys/xppowertoys.mspx">
+                to use Tweak UI, found in <a href="https://www.microsoft.com/windowsxp/downloads/powertoys/xppowertoys.mspx">
                     Microsoft PowerToys</a>.</li>
             <li>Please link back to this page, <a href="https://joelpurra.com/Projects/X-Mouse_Controls/">
                 https://joelpurra.com/Projects/X-Mouse_Controls/</a> if you like and use this program.</li>
@@ -101,14 +101,14 @@
         <h2>
             Source code</h2>
         <p>
-            I've release the full sourcecode, including this webpage and original graphics under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>. You can find the <a href="https://joelpurra.github.io/xmouse-controls/">source code on github</a>. Contributions are welcome!
+            I've release the full sourcecode, including this webpage and original graphics under the <a href="https://www.gnu.org/licenses/gpl.html">GNU General Public License</a>. You can find the <a href="https://joelpurra.github.io/xmouse-controls/">source code on github</a>. Contributions are welcome!
         </p>
         <h2>
             History and downloads</h2>
         <dl>
             <dt>2012-08-12 20:30 1.0.1.0 <a href="https://joelpurra.github.io/xmouse-controls/">Source</a></dt>
             <dd>
-                No changes, but the <a href="https://joelpurra.github.io/xmouse-controls/">source code is now release on github</a> under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.<br />
+                No changes, but the <a href="https://joelpurra.github.io/xmouse-controls/">source code is now release on github</a> under the <a href="https://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.<br />
             </dd>
             <dt>2010-04-03 11:55 1.0.1.0 <a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.7z">
                 Release</a> <a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.7z">
