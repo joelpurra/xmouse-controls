@@ -3,9 +3,9 @@ layout: bare
 ---
 <head>
 	<title>{{ site.projectName | xml_escape }}</title>
-	<meta http-equiv="Refresh" content="0; url={{ site.projectGithub }}" />
+	<meta http-equiv="Refresh" content="0; url={{ site.projectUrl }}" />
 {% include ga.html %}
 </head>
 <body>
-	<a href="{{ site.projectUrl }}">{{ site.projectGithub | xml_escape }}</a>
+	<a href="{{ site.projectUrl }}">{{ site.projectUrl | xml_escape }}</a>
 </body>
