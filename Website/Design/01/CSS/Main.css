@@ -194,3 +194,18 @@ a.button:active
 	border-radius: 0.3em;
 	padding: 1em;
 }
+
+.donate kbd {
+  display: inline-block;
+  color: #555;
+  vertical-align: middle;
+  padding: 0.1em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 0.3em;
+  box-shadow: inset 0 -1px 0 #bbb;
+  font-family: Helvetica, Verdana, sans-serif;
+}
