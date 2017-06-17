@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:X_Mouse_Controls"
     Title="X-Mouse Controls"
-    ResizeMode="NoResize"
+    ResizeMode="CanMinimize"
     SizeToContent="WidthAndHeight"
     Loaded="Window_Loaded"
     Topmost="True"
