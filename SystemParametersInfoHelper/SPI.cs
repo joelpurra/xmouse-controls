@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using System.ComponentModel;
 
@@ -7,7 +7,7 @@ namespace SystemParametersInfo
     #region SPI
     /// <summary>
     /// SPI_ System-wide parameter - Used in SystemParametersInfo function 
-    /// http://www.pinvoke.net/default.aspx/Enums/SPI.html
+    /// https://www.pinvoke.net/default.aspx/Enums/SPI.html
     /// </summary>
     [Description("SPI_(System-wide parameter - Used in SystemParametersInfo function )")]
     public enum SPI : uint
