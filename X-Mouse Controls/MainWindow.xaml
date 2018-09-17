@@ -10,12 +10,13 @@
     Margin="3"
     WindowStartupLocation="CenterScreen"
     Icon="pack://application:,,,/X-Mouse Controls.ico">
-    <StackPanel VerticalAlignment="Center" Margin="20" Width="200">
+    <StackPanel VerticalAlignment="Center" Margin="20" Width="350">
 
         <CheckBox Name="trackingCheckbox" Margin="3" IsChecked="{Binding IsTrackingEnabled}">Activate window tracking</CheckBox>
         <CheckBox Name="raisingCheckbox" Margin="3" IsEnabled="{Binding ElementName=trackingCheckbox, Path=IsChecked}" IsChecked="{Binding IsRaisingEnabled}">Activate window raising</CheckBox>
         <Slider Name="delaySlider" Margin="3" SmallChange="10" LargeChange="50" Minimum="{x:Static local:WindowTrackingValues.MinimumDelay}" Maximum="{x:Static local:WindowTrackingValues.MaximumDelay}" TickPlacement="BottomRight" TickFrequency="100" Padding="10" Value="{Binding Delay}" IsEnabled="{Binding ElementName=trackingCheckbox, Path=IsChecked}"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>Delay</Label>
             <TextBox Name="delayTextbox" Margin="3" Width="50" TextChanged="delayTextbox_TextChanged" IsEnabled="{Binding ElementName=trackingCheckbox, Path=IsChecked}" Text="{Binding Delay, StringFormat=0}"/>
             <Label>ms</Label>
         </StackPanel>
