@@ -1,13 +1,11 @@
-using System;
-
 using System.Runtime.InteropServices;
 
 namespace SystemParametersInfo
 {
     /// <summary>
-    /// Wrapper for the SystemParametersInfo in user32.dll 
+    /// Wrapper for the SystemParametersInfo in user32.dll
     /// https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa
-    /// https://www.pinvoke.net/default.aspx/user32.SystemParametersInfo 
+    /// https://www.pinvoke.net/default.aspx/user32.SystemParametersInfo
     /// </summary>
     public class Helper
     {
