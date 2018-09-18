@@ -15,11 +15,11 @@
         VerticalAlignment="Center"
         Margin="20"
         Width="350">
-
         <CheckBox
             Name="trackingCheckbox"
             Margin="3"
-            IsChecked="{Binding IsTrackingEnabled}">
+            IsChecked="{Binding IsTrackingEnabled}"
+            ToolTip="Also known as x-mouse behavior, or focus follows mouse.">
             Activate window tracking
         </CheckBox>
 
@@ -27,7 +27,9 @@
             Name="raisingCheckbox"
             Margin="3"
             IsEnabled="{Binding ElementName=trackingCheckbox, Path=IsChecked}"
-            IsChecked="{Binding IsRaisingEnabled}">
+            IsChecked="{Binding IsRaisingEnabled}"
+            ToolTipService.ShowOnDisabled="true"
+            ToolTip="Automatically brings focused windows to the top.">
             Activate window raising
         </CheckBox>
 
@@ -40,7 +42,6 @@
             Maximum="{x:Static local:WindowTrackingValues.MaximumDelay}"
             TickPlacement="BottomRight"
             TickFrequency="100"
-            Padding="10"
             Value="{Binding Delay}"
             IsEnabled="{Binding ElementName=trackingCheckbox, Path=IsChecked}" />
         <StackPanel
@@ -58,7 +59,8 @@
                 IsEnabled="{Binding ElementName=trackingCheckbox, Path=IsChecked}"
                 Text="{Binding Delay, StringFormat=0}" />
 
-            <Label>
+            <Label
+                ToolTip="Milliseconds.">
                 ms
             </Label>
         </StackPanel>
@@ -77,24 +79,60 @@
                 VerticalAlignment="Center">
                 <TextBlock
                     TextWrapping="WrapWithOverflow"
-                    Margin="3"
-                    Padding="3">
-                    A tool to enable or disable active window tracking, raising and also the delay in milliseconds. This is known as x-mouse behavior.
-                </TextBlock>
-
-                <TextBlock
-                    TextWrapping="WrapWithOverflow"
-                    Margin="3"
-                    Padding="3">
-                    Originally coded a late night in December of 2007 by Joel Purra
-
-                    <LineBreak />
-
+                    Margin="3">
                     <Hyperlink
                         NavigateUri="https://joelpurra.com/projects/X-Mouse_Controls/"
                         TargetName="_blank"
                         RequestNavigate="Hyperlink_RequestNavigate">
                         https://joelpurra.com/projects/X-Mouse_Controls/
+                    </Hyperlink>
+                </TextBlock>
+
+                <TextBlock
+                    TextWrapping="WrapWithOverflow"
+                    Margin="3">
+                    Windows utility to enable or disable active window tracking, raising, and also the delay in milliseconds. This is known as x-mouse behavior, or focus follows mouse.
+                </TextBlock>
+
+                <TextBlock
+                    TextWrapping="WrapWithOverflow"
+                    Margin="3">
+                    The recommended delay is 100—300 milliseconds, to avoid some menus and windows disappearing before getting focused.
+                </TextBlock>
+
+                <TextBlock
+                    TextWrapping="WrapWithOverflow"
+                    Margin="3">
+                    You only need to run this program once; all applied changes are persisted immediately. This window will stay on top to avoid it accidentally going under another window.
+                </TextBlock>
+
+                <TextBlock
+                    TextWrapping="WrapWithOverflow"
+                    Margin="3">
+                    Originally developed a late night in December of 2007.
+
+                    <LineBreak />
+
+                    <Run
+                        ToolTip="2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018">
+                        Copyright
+                    </Run>
+
+                    <Hyperlink
+                        NavigateUri="https://joelpurra.com/"
+                        TargetName="_blank"
+                        RequestNavigate="Hyperlink_RequestNavigate">
+                        Joel Purra
+                    </Hyperlink>.
+
+                    <Hyperlink
+                        NavigateUri="https://www.gnu.org/licenses/gpl.html"
+                        TargetName="_blank"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="Released under the GNU General Public License (GPL)."
+                        TextDecorations=""
+                        TextElement.Foreground="Black">
+                        Free/libre open source software.
                     </Hyperlink>
                 </TextBlock>
             </StackPanel>
