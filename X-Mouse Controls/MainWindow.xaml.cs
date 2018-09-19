@@ -1,38 +1,38 @@
-using System;
-using System.Windows;
-using System.Windows.Navigation;
-using System.Windows.Documents;
-
-using System.Diagnostics;
-using SystemParametersInfo;
-
 namespace X_Mouse_Controls
 {
+    using System;
+    using System.Diagnostics;
+    using System.Windows;
+    using System.Windows.Documents;
+    using System.Windows.Navigation;
+    using SystemParametersInfo;
+
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml.
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly WindowTrackingValues windowTrackingValues;
+
         public MainWindow()
         {
             InitializeComponent();
 
             windowTrackingValues = new WindowTrackingValues();
 
-            this.DataContext = windowTrackingValues;
+            DataContext = windowTrackingValues;
         }
 
         private void GetValues()
         {
-            // Defaults to be overwritten when reading system settings
+            // Defaults to be overwritten when reading system settings.
             bool windowTrackingIsEnabled = false;
             bool windowRaisingIsEnabled = false;
             uint activeWindowTrkTimeout = (uint)WindowTrackingValues.DefaultDelay;
 
-            // Values are read by passing a constant value and a reference to a corresponding datatype
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWINDOWTRACKING, 0, ref windowTrackingIsEnabled, 0);
+                windowTrackingIsEnabled = Helpers.GetActiveWindowTracking();
             }
             catch
             {
@@ -41,7 +41,7 @@ namespace X_Mouse_Controls
 
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWNDTRKZORDER, 0, ref windowRaisingIsEnabled, 0);
+                windowRaisingIsEnabled = Helpers.GetActiveWindowRaising();
             }
             catch
             {
@@ -50,7 +50,7 @@ namespace X_Mouse_Controls
 
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWNDTRKTIMEOUT, 0, ref activeWindowTrkTimeout, 0);
+                activeWindowTrkTimeout = Helpers.GetActiveWindowDelay();
             }
             catch
             {
@@ -64,26 +64,27 @@ namespace X_Mouse_Controls
 
         private void SetValues()
         {
-            // Saving values
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWINDOWTRACKING, 0, windowTrackingValues.IsTrackingEnabled, 1);
+                Helpers.SetActiveWindowTracking(windowTrackingValues.IsTrackingEnabled);
             }
             catch
             {
                 MessageBox.Show("Failed to set active window tracking value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKZORDER, 0, windowTrackingValues.IsRaisingEnabled, 1);
+                Helpers.SetActiveWindowRaising(windowTrackingValues.IsRaisingEnabled);
             }
             catch
             {
                 MessageBox.Show("Failed to set active window raising value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKTIMEOUT, 0, (uint)windowTrackingValues.Delay, 1);
+                Helpers.SetActiveWindowDelay((uint)windowTrackingValues.Delay);
             }
             catch
             {
@@ -93,7 +94,7 @@ namespace X_Mouse_Controls
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            // Not looking very nice, but it's a workaround for standalone applications
+            // Not looking very nice, but it's a workaround for standalone applications.
             // https://laurenlavoie.com/avalon/159
             Uri uri = ((Hyperlink)sender).NavigateUri;
             Process.Start(new ProcessStartInfo(uri.ToString()));
@@ -121,7 +122,5 @@ namespace X_Mouse_Controls
             }
         }
         #endregion
-
-        private readonly WindowTrackingValues windowTrackingValues;
     }
 }

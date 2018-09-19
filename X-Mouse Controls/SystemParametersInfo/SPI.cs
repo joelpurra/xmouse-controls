@@ -1,14 +1,15 @@
-using System.ComponentModel;
-
 namespace SystemParametersInfo
 {
+    using System.ComponentModel;
+
     #region SPI
     /// <summary>
-    /// SPI_ System-wide parameter - Used in SystemParametersInfo function
+    /// SPI_ System-wide parameter. Used in SystemParametersInfo function.
+    /// https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa
     /// https://www.pinvoke.net/default.aspx/Enums/SPI.html
     /// </summary>
-    [Description("SPI_(System-wide parameter - Used in SystemParametersInfo function )")]
-    public enum SPI : uint
+    [Description("SPI_ System-wide parameter. Used in SystemParametersInfo function.")]
+    internal enum SPI : uint
     {
         /// <summary>
         /// Determines whether the warning beeper is on.

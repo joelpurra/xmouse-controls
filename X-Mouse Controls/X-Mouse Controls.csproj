@@ -98,7 +98,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SystemParametersInfo\Helper.cs" />
+    <Compile Include="SystemParametersInfo\Helpers.cs" />
+    <Compile Include="SystemParametersInfo\NativeMethods.cs" />
+    <Compile Include="SystemParametersInfo\SPIF.cs" />
     <Compile Include="SystemParametersInfo\SPI.cs" />
     <Compile Include="WindowTrackingValues.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

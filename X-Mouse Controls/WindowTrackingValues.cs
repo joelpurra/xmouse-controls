@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace X_Mouse_Controls
 {
-    public class WindowTrackingValues
+    using System;
+
+    internal class WindowTrackingValues
     {
         public WindowTrackingValues()
             : this(false, false, DefaultDelay)
@@ -14,9 +11,9 @@ namespace X_Mouse_Controls
 
         public WindowTrackingValues(bool isTrackingEnabled, bool isRaisingEnabled, double delay)
         {
-            this.IsTrackingEnabled = isTrackingEnabled;
-            this.IsRaisingEnabled = isRaisingEnabled;
-            this.Delay = delay;
+            IsTrackingEnabled = isTrackingEnabled;
+            IsRaisingEnabled = isRaisingEnabled;
+            Delay = delay;
         }
 
         public bool IsTrackingEnabled { get; set; }
@@ -25,14 +22,8 @@ namespace X_Mouse_Controls
         private double delay;
         public double Delay
         {
-            get
-            {
-                return delay;
-            }
-            set
-            {
-                delay = GetDelayInRange(value);
-            }
+            get => delay;
+            set => delay = GetDelayInRange(value);
         }
 
         public static double GetDelayInRange(double delay)
