@@ -13,7 +13,6 @@ namespace SystemParametersInfo
 {
     using System.ComponentModel;
 
-    #region WM
     /// <summary>
     /// WM_* Constants and their definitions or descriptions and what can cause them to be sent.
     /// https://docs.microsoft.com/en-gb/windows/desktop/winmsg/about-messages-and-message-queues
@@ -35,5 +34,4 @@ namespace SystemParametersInfo
         /// </summary>
         SETTINGCHANGE = WININICHANGE,
     }
-    #endregion // WM
 }

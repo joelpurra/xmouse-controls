@@ -9,6 +9,7 @@
 // - https://www.gnu.org/licenses/
 // </copyright>
 
+#pragma warning disable SA1600 // Elements must be documented
 namespace XMouseControls
 {
     using System;
@@ -16,6 +17,14 @@ namespace XMouseControls
 
     internal class WindowTrackingValues : INotifyPropertyChanged
     {
+        public const double MinimumDelay = 0u;
+        public const double DefaultDelay = 500u;
+        public const double MaximumDelay = 2500u;
+
+        private double delay;
+        private bool isRaisingEnabled;
+        private bool isTrackingEnabled;
+
         public WindowTrackingValues()
             : this(false, false, DefaultDelay)
         {
@@ -23,68 +32,60 @@ namespace XMouseControls
 
         public WindowTrackingValues(bool isTrackingEnabled, bool isRaisingEnabled, double delay)
         {
-            IsTrackingEnabled = isTrackingEnabled;
-            IsRaisingEnabled = isRaisingEnabled;
-            Delay = delay;
+            this.IsTrackingEnabled = isTrackingEnabled;
+            this.IsRaisingEnabled = isRaisingEnabled;
+            this.Delay = delay;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public const double MinimumDelay = 0u;
-        public const double DefaultDelay = 500u;
-        public const double MaximumDelay = 2500u;
-
-        private double _delay;
-        private bool _isRaisingEnabled;
-        private bool _isTrackingEnabled;
-
         public bool IsTrackingEnabled
         {
-            get => _isTrackingEnabled;
+            get => this.isTrackingEnabled;
             set
             {
-                if (_isTrackingEnabled != value)
+                if (this.isTrackingEnabled != value)
                 {
-                    _isTrackingEnabled = value;
-                    OnPropertyChanged(nameof(IsTrackingEnabled));
+                    this.isTrackingEnabled = value;
+                    this.OnPropertyChanged(nameof(this.IsTrackingEnabled));
                 }
             }
         }
 
         public bool IsRaisingEnabled
         {
-            get => _isRaisingEnabled;
+            get => this.isRaisingEnabled;
             set
             {
-                if (_isRaisingEnabled != value)
+                if (this.isRaisingEnabled != value)
                 {
-                    _isRaisingEnabled = value;
-                    OnPropertyChanged(nameof(IsRaisingEnabled));
+                    this.isRaisingEnabled = value;
+                    this.OnPropertyChanged(nameof(this.IsRaisingEnabled));
                 }
             }
         }
 
         public double Delay
         {
-            get => _delay;
+            get => this.delay;
             set
             {
                 double newDelay = GetDelayInRange(value);
 
-                if (_delay != newDelay)
+                if (this.delay != newDelay)
                 {
-                    _delay = newDelay;
-                    OnPropertyChanged(nameof(Delay));
+                    this.delay = newDelay;
+                    this.OnPropertyChanged(nameof(this.Delay));
                 }
             }
         }
 
-        public static double GetDelayInRange(double delay)
+        protected void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private static double GetDelayInRange(double delay)
         {
             return Math.Max(MinimumDelay, Math.Min(delay, MaximumDelay));
         }

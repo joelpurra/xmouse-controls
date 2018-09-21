@@ -9,6 +9,10 @@
 // - https://www.gnu.org/licenses/
 // </copyright>
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable IDE1006 // Naming Styles
+#pragma warning disable SA1300 // Element must begin with upper-case letter
+#pragma warning disable SA1600 // Elements must be documented
 namespace XMouseControls
 {
     using System;
@@ -29,9 +33,16 @@ namespace XMouseControls
 
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
-            DataContext = windowTrackingValues;
+            this.DataContext = this.windowTrackingValues;
+        }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
+            source.AddHook(this.WndProc);
         }
 
         private void GetValues()
@@ -68,16 +79,16 @@ namespace XMouseControls
                 MessageBox.Show("Failed to read active window tracking delay value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
-            windowTrackingValues.IsTrackingEnabled = windowTrackingIsEnabled;
-            windowTrackingValues.IsRaisingEnabled = windowRaisingIsEnabled;
-            windowTrackingValues.Delay = activeWindowTrkTimeout;
+            this.windowTrackingValues.IsTrackingEnabled = windowTrackingIsEnabled;
+            this.windowTrackingValues.IsRaisingEnabled = windowRaisingIsEnabled;
+            this.windowTrackingValues.Delay = activeWindowTrkTimeout;
         }
 
         private void SetValues()
         {
             try
             {
-                Helpers.SetActiveWindowTracking(windowTrackingValues.IsTrackingEnabled);
+                Helpers.SetActiveWindowTracking(this.windowTrackingValues.IsTrackingEnabled);
             }
             catch
             {
@@ -86,7 +97,7 @@ namespace XMouseControls
 
             try
             {
-                Helpers.SetActiveWindowRaising(windowTrackingValues.IsRaisingEnabled);
+                Helpers.SetActiveWindowRaising(this.windowTrackingValues.IsRaisingEnabled);
             }
             catch
             {
@@ -95,7 +106,7 @@ namespace XMouseControls
 
             try
             {
-                Helpers.SetActiveWindowDelay((uint)windowTrackingValues.Delay);
+                Helpers.SetActiveWindowDelay((uint)this.windowTrackingValues.Delay);
             }
             catch
             {
@@ -105,16 +116,16 @@ namespace XMouseControls
 
         private void ApplyValues()
         {
-            pauseRefresh = true;
-            SetValues();
-            pauseRefresh = false;
+            this.pauseRefresh = true;
+            this.SetValues();
+            this.pauseRefresh = false;
         }
 
         private void RefreshValues()
         {
-            if (pauseRefresh != true)
+            if (this.pauseRefresh != true)
             {
-                GetValues();
+                this.GetValues();
             }
         }
 
@@ -127,35 +138,25 @@ namespace XMouseControls
             e.Handled = true;
         }
 
-        #region Events
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            RefreshValues();
+            this.RefreshValues();
         }
 
         private void applyButton_Click(object sender, RoutedEventArgs e)
         {
-            ApplyValues();
+            this.ApplyValues();
         }
 
         private void delayTextbox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             uint delay = (uint)WindowTrackingValues.DefaultDelay;
 
-            if (!uint.TryParse(delayTextbox.Text, out delay))
+            if (!uint.TryParse(this.delayTextbox.Text, out delay))
             {
-                //delayTextbox.Text = delay.ToString();
-                windowTrackingValues.Delay = delay;
+                // delayTextbox.Text = delay.ToString();
+                this.windowTrackingValues.Delay = delay;
             }
-        }
-        #endregion
-
-        #region Windows Messaging
-        protected override void OnSourceInitialized(EventArgs e)
-        {
-            base.OnSourceInitialized(e);
-            HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
-            source.AddHook(WndProc);
         }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
@@ -163,12 +164,11 @@ namespace XMouseControls
             switch (msg)
             {
                 case (int)WM.SETTINGCHANGE:
-                    RefreshValues();
+                    this.RefreshValues();
                     break;
             }
 
             return IntPtr.Zero;
         }
-        #endregion
     }
 }

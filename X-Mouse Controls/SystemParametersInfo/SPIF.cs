@@ -13,7 +13,6 @@ namespace SystemParametersInfo
 {
     using System.ComponentModel;
 
-    #region SPIF
     /// <summary>
     /// SPIF_ Used in SystemParametersInfo as fWinIni.
     /// https://www.pinvoke.net/default.aspx/Enums/SPIF.html
@@ -21,6 +20,9 @@ namespace SystemParametersInfo
     [Description("SPIF_ Used in SystemParametersInfo as fWinIni.")]
     internal enum SPIF : uint
     {
+        /// <summary>
+        /// Take no action.
+        /// </summary>
         None = 0x00,
 
         /// <summary>
@@ -38,5 +40,4 @@ namespace SystemParametersInfo
         /// </summary>
         SPIF_SENDWININICHANGE = 0x02
     }
-    #endregion // SPIF
 }

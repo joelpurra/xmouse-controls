@@ -9,6 +9,7 @@
 // - https://www.gnu.org/licenses/
 // </copyright>
 
+#pragma warning disable SA1600 // Elements must be documented
 namespace SystemParametersInfo
 {
     using System;
