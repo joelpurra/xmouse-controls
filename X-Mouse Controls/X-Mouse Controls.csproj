@@ -162,6 +162,8 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
     <Analyzer Include="..\packages\Text.Analyzers.2.6.1\analyzers\dotnet\cs\Text.Analyzers.dll" />
     <Analyzer Include="..\packages\Text.Analyzers.2.6.1\analyzers\dotnet\cs\Text.CSharp.Analyzers.dll" />
   </ItemGroup>
