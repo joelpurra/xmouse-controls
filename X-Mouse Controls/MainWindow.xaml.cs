@@ -1,4 +1,4 @@
-namespace X_Mouse_Controls
+namespace XMouseControls
 {
     using System;
     using System.Diagnostics;

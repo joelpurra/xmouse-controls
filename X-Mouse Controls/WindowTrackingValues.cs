@@ -1,4 +1,4 @@
-namespace X_Mouse_Controls
+namespace XMouseControls
 {
     using System;
     using System.ComponentModel;
@@ -24,9 +24,9 @@ namespace X_Mouse_Controls
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public static readonly double MinimumDelay = 0u;
-        public static readonly double DefaultDelay = 500u;
-        public static readonly double MaximumDelay = 2500u;
+        public const double MinimumDelay = 0u;
+        public const double DefaultDelay = 500u;
+        public const double MaximumDelay = 2500u;
 
         private double _delay;
         private bool _isRaisingEnabled;
@@ -40,7 +40,7 @@ namespace X_Mouse_Controls
                 if (_isTrackingEnabled != value)
                 {
                     _isTrackingEnabled = value;
-                    OnPropertyChanged("IsTrackingEnabled");
+                    OnPropertyChanged(nameof(IsTrackingEnabled));
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace X_Mouse_Controls
                 if (_isRaisingEnabled != value)
                 {
                     _isRaisingEnabled = value;
-                    OnPropertyChanged("IsRaisingEnabled");
+                    OnPropertyChanged(nameof(IsRaisingEnabled));
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace X_Mouse_Controls
                 if (_delay != newDelay)
                 {
                     _delay = newDelay;
-                    OnPropertyChanged("Delay");
+                    OnPropertyChanged(nameof(Delay));
                 }
             }
         }
