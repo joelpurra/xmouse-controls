@@ -4,6 +4,7 @@ namespace X_Mouse_Controls
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Documents;
+    using System.Windows.Interop;
     using System.Windows.Navigation;
     using SystemParametersInfo;
 
@@ -12,13 +13,12 @@ namespace X_Mouse_Controls
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly WindowTrackingValues windowTrackingValues;
+        private readonly WindowTrackingValues windowTrackingValues = new WindowTrackingValues();
+        private bool pauseRefresh = false;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            windowTrackingValues = new WindowTrackingValues();
 
             DataContext = windowTrackingValues;
         }
@@ -92,6 +92,21 @@ namespace X_Mouse_Controls
             }
         }
 
+        private void ApplyValues()
+        {
+            pauseRefresh = true;
+            SetValues();
+            pauseRefresh = false;
+        }
+
+        private void RefreshValues()
+        {
+            if (pauseRefresh != true)
+            {
+                GetValues();
+            }
+        }
+
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             // Not looking very nice, but it's a workaround for standalone applications.
@@ -104,12 +119,12 @@ namespace X_Mouse_Controls
         #region Events
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            GetValues();
+            RefreshValues();
         }
 
         private void applyButton_Click(object sender, RoutedEventArgs e)
         {
-            SetValues();
+            ApplyValues();
         }
 
         private void delayTextbox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
@@ -118,8 +133,30 @@ namespace X_Mouse_Controls
 
             if (!uint.TryParse(delayTextbox.Text, out delay))
             {
-                delayTextbox.Text = delay.ToString();
+                //delayTextbox.Text = delay.ToString();
+                windowTrackingValues.Delay = delay;
             }
+        }
+        #endregion
+
+        #region Windows Messaging
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
+            source.AddHook(WndProc);
+        }
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            switch (msg)
+            {
+                case (int)WM.SETTINGCHANGE:
+                    RefreshValues();
+                    break;
+            }
+
+            return IntPtr.Zero;
         }
         #endregion
     }
