@@ -14,3 +14,4 @@
 *.settings text eol=crlf
 *.config text eol=crlf
 *.txt text eol=crlf
+*.svg text eol=lf
