@@ -2,7 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:X_Mouse_Controls"
-    Title="X-Mouse Controls" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Loaded="Window_Loaded" Topmost="True" Margin="3" WindowStartupLocation="CenterScreen"
+    Title="X-Mouse Controls"
+    ResizeMode="CanMinimize"
+    SizeToContent="WidthAndHeight"
+    Loaded="Window_Loaded"
+    Topmost="True"
+    Margin="3"
+    WindowStartupLocation="CenterScreen"
     Icon="pack://application:,,,/X-Mouse Controls.ico">
     <StackPanel VerticalAlignment="Center" Margin="20" Width="200">
 
