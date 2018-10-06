@@ -1,10 +1,30 @@
-namespace X_Mouse_Controls
+// <copyright file="WindowTrackingValues.cs" company="Joel Purra">
+// X-Mouse Controls by Joel Purra
+// Copyright © 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+// All rights reserved. Released under GNU General Public License version 3.0 (GPL-3.0).
+//
+// - https://joelpurra.com/projects/X-Mouse_Controls/
+// - https://github.com/joelpurra/xmouse-controls
+// - https://joelpurra.com/
+// - https://www.gnu.org/licenses/
+// </copyright>
+
+#pragma warning disable SA1600 // Elements must be documented
+namespace XMouseControls
 {
     using System;
     using System.ComponentModel;
 
     internal class WindowTrackingValues : INotifyPropertyChanged
     {
+        public const double MinimumDelay = 0u;
+        public const double DefaultDelay = 500u;
+        public const double MaximumDelay = 2500u;
+
+        private double delay;
+        private bool isRaisingEnabled;
+        private bool isTrackingEnabled;
+
         public WindowTrackingValues()
             : this(false, false, DefaultDelay)
         {
@@ -12,68 +32,60 @@ namespace X_Mouse_Controls
 
         public WindowTrackingValues(bool isTrackingEnabled, bool isRaisingEnabled, double delay)
         {
-            IsTrackingEnabled = isTrackingEnabled;
-            IsRaisingEnabled = isRaisingEnabled;
-            Delay = delay;
+            this.IsTrackingEnabled = isTrackingEnabled;
+            this.IsRaisingEnabled = isRaisingEnabled;
+            this.Delay = delay;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public static readonly double MinimumDelay = 0u;
-        public static readonly double DefaultDelay = 500u;
-        public static readonly double MaximumDelay = 2500u;
-
-        private double _delay;
-        private bool _isRaisingEnabled;
-        private bool _isTrackingEnabled;
-
         public bool IsTrackingEnabled
         {
-            get => _isTrackingEnabled;
+            get => this.isTrackingEnabled;
             set
             {
-                if (_isTrackingEnabled != value)
+                if (this.isTrackingEnabled != value)
                 {
-                    _isTrackingEnabled = value;
-                    OnPropertyChanged("IsTrackingEnabled");
+                    this.isTrackingEnabled = value;
+                    this.OnPropertyChanged(nameof(this.IsTrackingEnabled));
                 }
             }
         }
 
         public bool IsRaisingEnabled
         {
-            get => _isRaisingEnabled;
+            get => this.isRaisingEnabled;
             set
             {
-                if (_isRaisingEnabled != value)
+                if (this.isRaisingEnabled != value)
                 {
-                    _isRaisingEnabled = value;
-                    OnPropertyChanged("IsRaisingEnabled");
+                    this.isRaisingEnabled = value;
+                    this.OnPropertyChanged(nameof(this.IsRaisingEnabled));
                 }
             }
         }
 
         public double Delay
         {
-            get => _delay;
+            get => this.delay;
             set
             {
                 double newDelay = GetDelayInRange(value);
 
-                if (_delay != newDelay)
+                if (this.delay != newDelay)
                 {
-                    _delay = newDelay;
-                    OnPropertyChanged("Delay");
+                    this.delay = newDelay;
+                    this.OnPropertyChanged(nameof(this.Delay));
                 }
             }
         }
 
-        public static double GetDelayInRange(double delay)
+        protected void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private static double GetDelayInRange(double delay)
         {
             return Math.Max(MinimumDelay, Math.Min(delay, MaximumDelay));
         }

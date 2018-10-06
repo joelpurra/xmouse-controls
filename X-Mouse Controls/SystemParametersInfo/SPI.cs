@@ -1,8 +1,18 @@
+// <copyright file="SPI.cs" company="Joel Purra">
+// X-Mouse Controls by Joel Purra
+// Copyright © 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+// All rights reserved. Released under GNU General Public License version 3.0 (GPL-3.0).
+//
+// - https://joelpurra.com/projects/X-Mouse_Controls/
+// - https://github.com/joelpurra/xmouse-controls
+// - https://joelpurra.com/
+// - https://www.gnu.org/licenses/
+// </copyright>
+
 namespace SystemParametersInfo
 {
     using System.ComponentModel;
 
-    #region SPI
     /// <summary>
     /// SPI_ System-wide parameter. Used in SystemParametersInfo function.
     /// https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-systemparametersinfoa
@@ -118,7 +128,8 @@ namespace SystemParametersInfo
 
         /// <summary>
         /// Retrieves the keyboard repeat-delay setting, which is a value in the range from 0 (approximately 250 ms delay) through 3
-        /// (approximately 1 second delay). The actual delay associated with each value may vary depending on the hardware. The pvParam parameter must point to an integer variable that receives the setting.
+        /// (approximately 1 second delay). The actual delay associated with each value may vary depending on the hardware.
+        /// The pvParam parameter must point to an integer variable that receives the setting.
         /// </summary>
         SPI_GETKEYBOARDDELAY = 0x0016,
 
@@ -211,7 +222,8 @@ namespace SystemParametersInfo
         /// </summary>
         SPI_SETFASTTASKSWITCH = 0x0024,
 
-        //#if(WINVER >= 0x0400)
+        // #if(WINVER >= 0x0400)
+
         /// <summary>
         /// Sets dragging of full windows either on or off. The uiParam parameter specifies TRUE for on, or FALSE for off.
         /// Windows 95:  This flag is supported only if Windows Plus! is installed. See SPI_GETWINDOWSEXTENSION.
@@ -472,7 +484,9 @@ namespace SystemParametersInfo
 
         /// <summary>
         /// Sets the hot key set for switching between input languages. The uiParam and pvParam parameters are not used.
-        /// The value sets the shortcut keys in the keyboard property sheets by reading the registry again. The registry must be set before this flag is used. the path in the registry is \HKEY_CURRENT_USER\keyboard layout\toggle. Valid values are "1" = ALT+SHIFT, "2" = CTRL+SHIFT, and "3" = none.
+        /// The value sets the shortcut keys in the keyboard property sheets by reading the registry again.
+        /// The registry must be set before this flag is used. the path in the registry is
+        /// \HKEY_CURRENT_USER\keyboard layout\toggle. Valid values are "1" = ALT+SHIFT, "2" = CTRL+SHIFT, and "3" = none.
         /// </summary>
         SPI_SETLANGTOGGLE = 0x005B,
 
@@ -510,7 +524,8 @@ namespace SystemParametersInfo
         /// Same as SPI_SETSCREENSAVERRUNNING.
         /// </summary>
         SPI_SCREENSAVERRUNNING = SPI_SETSCREENSAVERRUNNING,
-        //#endif /* WINVER >= 0x0400 */
+
+        // #endif /* WINVER >= 0x0400 */
 
         /// <summary>
         /// Retrieves information about the FilterKeys accessibility feature. The pvParam parameter must point to a FILTERKEYS structure
@@ -587,7 +602,8 @@ namespace SystemParametersInfo
         /// </summary>
         SPI_SETACCESSTIMEOUT = 0x003D,
 
-        //#if(WINVER >= 0x0400)
+        // #if(WINVER >= 0x0400)
+
         /// <summary>
         /// Windows Me/98/95:  Retrieves information about the SerialKeys accessibility feature. The pvParam parameter must point
         /// to a SERIALKEYS structure that receives the information. Set the cbSize member of this structure and the uiParam parameter
@@ -603,7 +619,8 @@ namespace SystemParametersInfo
         /// Windows Server 2003, Windows XP/2000/NT:  Not supported. The user controls this feature through the control panel.
         /// </summary>
         SPI_SETSERIALKEYS = 0x003F,
-        //#endif /* WINVER >= 0x0400 */
+
+        // #endif /* WINVER >= 0x0400 */
 
         /// <summary>
         /// Retrieves information about the SoundSentry accessibility feature. The pvParam parameter must point to a SOUNDSENTRY structure
@@ -617,7 +634,8 @@ namespace SystemParametersInfo
         /// </summary>
         SPI_SETSOUNDSENTRY = 0x0041,
 
-        //#if(_WIN32_WINNT >= 0x0400)
+        // #if(_WIN32_WINNT >= 0x0400)
+
         /// <summary>
         /// Determines whether the snap-to-default-button feature is enabled. If enabled, the mouse cursor automatically moves
         /// to the default button, such as OK or Apply, of a dialog box. The pvParam parameter must point to a BOOL variable
@@ -633,9 +651,11 @@ namespace SystemParametersInfo
         /// Windows 95:  Not supported.
         /// </summary>
         SPI_SETSNAPTODEFBUTTON = 0x0060,
-        //#endif /* _WIN32_WINNT >= 0x0400 */
 
-        //#if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
+        // #endif /* _WIN32_WINNT >= 0x0400 */
+
+        // #if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
+
         /// <summary>
         /// Retrieves the width, in pixels, of the rectangle within which the mouse pointer has to stay for TrackMouseEvent
         /// to generate a WM_MOUSEHOVER message. The pvParam parameter must point to a UINT variable that receives the width.
@@ -721,9 +741,11 @@ namespace SystemParametersInfo
         /// Windows NT, Windows 95:  This value is not supported.
         /// </summary>
         SPI_SETSHOWIMEUI = 0x006F,
-        //#endif
 
-        //#if(WINVER >= 0x0500)
+        // #endif
+
+        // #if(WINVER >= 0x0500)
+
         /// <summary>
         /// Retrieves the current mouse speed. The mouse speed determines how far the pointer will move based on the distance the mouse moves.
         /// The pvParam parameter must point to an integer that receives a value which ranges between 1 (slowest) and 20 (fastest).
@@ -754,9 +776,11 @@ namespace SystemParametersInfo
         /// Windows NT, Windows Me/98/95:  This value is not supported.
         /// </summary>
         SPI_GETDESKWALLPAPER = 0x0073,
-        //#endif /* WINVER >= 0x0500 */
 
-        //#if(WINVER >= 0x0500)
+        // #endif /* WINVER >= 0x0500 */
+
+        // #if(WINVER >= 0x0500)
+
         /// <summary>
         /// Determines whether active window tracking (activating the window the mouse is on) is on or off. The pvParam parameter must point
         /// to a BOOL variable that receives TRUE for on, or FALSE for off.
@@ -964,7 +988,8 @@ namespace SystemParametersInfo
         /// </summary>
         SPI_SETCURSORSHADOW = 0x101B,
 
-        //#if(_WIN32_WINNT >= 0x0501)
+        // #if(_WIN32_WINNT >= 0x0501)
+
         /// <summary>
         /// Retrieves the state of the Mouse Sonar feature. The pvParam parameter must point to a BOOL variable that receives TRUE
         /// if enabled or FALSE otherwise. For more information, see About Mouse Input on MSDN.
@@ -1055,7 +1080,8 @@ namespace SystemParametersInfo
         /// or FALSE if the screensaver will be deactivated by simulated input.
         /// </summary>
         SPI_SETBLOCKSENDINPUTRESETS = 0x1027,
-        //#endif /* _WIN32_WINNT >= 0x0501 */
+
+        // #endif /* _WIN32_WINNT >= 0x0501 */
 
         /// <summary>
         /// Determines whether UI effects are enabled or disabled. The pvParam parameter must point to a BOOL variable that receives TRUE
@@ -1125,7 +1151,8 @@ namespace SystemParametersInfo
         /// </summary>
         SPI_SETCARETWIDTH = 0x2007,
 
-        //#if(_WIN32_WINNT >= 0x0501)
+        // #if(_WIN32_WINNT >= 0x0501)
+
         /// <summary>
         /// Retrieves the time delay before the primary mouse button is locked. The pvParam parameter must point to DWORD that receives
         /// the time delay. This is only enabled if SPI_SETMOUSECLICKLOCK is set to TRUE. For more information, see About Mouse Input on MSDN.
@@ -1208,5 +1235,4 @@ namespace SystemParametersInfo
         /// </summary>
         SPI_SETFONTSMOOTHINGORIENTATION = 0x2013,
     }
-    #endregion // SPI
 }
