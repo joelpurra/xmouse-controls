@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="./website/Design/02/Images/icon/xmouse-controls-2048x2048.png" width="256" height="256" alt="X-Mouse Controls logotype, an active window below a greyed out window." /></a></p>
+  <a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="./docs/Design/02/Images/icon/xmouse-controls-2048x2048.png" width="256" height="256" alt="X-Mouse Controls logotype, an active window below a greyed out window." /></a></p>
 
 <h1 align="center">
   <a href="https://joelpurra.com/projects/X-Mouse_Controls/">X-Mouse Controls</a>
