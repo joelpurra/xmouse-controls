@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows;
 using System.Windows.Navigation;
 using System.Windows.Documents;
@@ -94,7 +94,7 @@ namespace X_Mouse_Controls
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             // Not looking very nice, but it's a workaround for standalone applications
-            // http://laurenlavoie.com/avalon/159
+            // https://laurenlavoie.com/avalon/159
             Uri uri = ((Hyperlink)sender).NavigateUri;
             Process.Start(new ProcessStartInfo(uri.ToString()));
             e.Handled = true;

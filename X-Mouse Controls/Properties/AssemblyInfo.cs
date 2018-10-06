@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("X-Mouse Controls")]
-[assembly: AssemblyDescription("Controls for active window tracking and raising.")]
+[assembly: AssemblyDescription("Windows utility to enable or disable active window tracking, raising and also the delay in milliseconds. This is known as x-mouse behavior or focus follows mouse.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Joel Purra")]
-[assembly: AssemblyProduct("X-Mouse Controls")]
-[assembly: AssemblyCopyright("Copyright © Joel Purra 2007, 2010")]
+[assembly: AssemblyCompany("Joel Purra, https://joelpurra.com/")]
+[assembly: AssemblyProduct("X-Mouse Controls, https://joelpurra.com/projects/X-Mouse_Controls/")]
+[assembly: AssemblyCopyright("Copyright © Joel Purra 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
