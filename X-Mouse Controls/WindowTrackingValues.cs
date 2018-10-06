@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace X_Mouse_Controls
 {
-    public class WindowTrackingValues
+    using System;
+    using System.ComponentModel;
+
+    internal class WindowTrackingValues : INotifyPropertyChanged
     {
         public WindowTrackingValues()
             : this(false, false, DefaultDelay)
@@ -14,24 +12,64 @@ namespace X_Mouse_Controls
 
         public WindowTrackingValues(bool isTrackingEnabled, bool isRaisingEnabled, double delay)
         {
-            this.IsTrackingEnabled = isTrackingEnabled;
-            this.IsRaisingEnabled = isRaisingEnabled;
-            this.Delay = delay;
+            IsTrackingEnabled = isTrackingEnabled;
+            IsRaisingEnabled = isRaisingEnabled;
+            Delay = delay;
         }
 
-        public bool IsTrackingEnabled { get; set; }
-        public bool IsRaisingEnabled { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        private double delay;
-        public double Delay
+        protected void OnPropertyChanged(string propertyName)
         {
-            get
-            {
-                return delay;
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public static readonly double MinimumDelay = 0u;
+        public static readonly double DefaultDelay = 500u;
+        public static readonly double MaximumDelay = 2500u;
+
+        private double _delay;
+        private bool _isRaisingEnabled;
+        private bool _isTrackingEnabled;
+
+        public bool IsTrackingEnabled
+        {
+            get => _isTrackingEnabled;
             set
             {
-                delay = GetDelayInRange(value);
+                if (_isTrackingEnabled != value)
+                {
+                    _isTrackingEnabled = value;
+                    OnPropertyChanged("IsTrackingEnabled");
+                }
+            }
+        }
+
+        public bool IsRaisingEnabled
+        {
+            get => _isRaisingEnabled;
+            set
+            {
+                if (_isRaisingEnabled != value)
+                {
+                    _isRaisingEnabled = value;
+                    OnPropertyChanged("IsRaisingEnabled");
+                }
+            }
+        }
+
+        public double Delay
+        {
+            get => _delay;
+            set
+            {
+                double newDelay = GetDelayInRange(value);
+
+                if (_delay != newDelay)
+                {
+                    _delay = newDelay;
+                    OnPropertyChanged("Delay");
+                }
             }
         }
 
@@ -39,9 +77,5 @@ namespace X_Mouse_Controls
         {
             return Math.Max(MinimumDelay, Math.Min(delay, MaximumDelay));
         }
-
-        public static readonly double MinimumDelay = 0u;
-        public static readonly double DefaultDelay = 500u;
-        public static readonly double MaximumDelay = 2500u;
     }
 }

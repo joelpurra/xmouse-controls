@@ -1,38 +1,38 @@
-using System;
-using System.Windows;
-using System.Windows.Navigation;
-using System.Windows.Documents;
-
-using System.Diagnostics;
-using SystemParametersInfo;
-
 namespace X_Mouse_Controls
 {
+    using System;
+    using System.Diagnostics;
+    using System.Windows;
+    using System.Windows.Documents;
+    using System.Windows.Interop;
+    using System.Windows.Navigation;
+    using SystemParametersInfo;
+
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml.
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly WindowTrackingValues windowTrackingValues = new WindowTrackingValues();
+        private bool pauseRefresh = false;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            windowTrackingValues = new WindowTrackingValues();
-
-            this.DataContext = windowTrackingValues;
+            DataContext = windowTrackingValues;
         }
 
         private void GetValues()
         {
-            // Defaults to be overwritten when reading system settings
+            // Defaults to be overwritten when reading system settings.
             bool windowTrackingIsEnabled = false;
             bool windowRaisingIsEnabled = false;
             uint activeWindowTrkTimeout = (uint)WindowTrackingValues.DefaultDelay;
 
-            // Values are read by passing a constant value and a reference to a corresponding datatype
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWINDOWTRACKING, 0, ref windowTrackingIsEnabled, 0);
+                windowTrackingIsEnabled = Helpers.GetActiveWindowTracking();
             }
             catch
             {
@@ -41,7 +41,7 @@ namespace X_Mouse_Controls
 
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWNDTRKZORDER, 0, ref windowRaisingIsEnabled, 0);
+                windowRaisingIsEnabled = Helpers.GetActiveWindowRaising();
             }
             catch
             {
@@ -50,7 +50,7 @@ namespace X_Mouse_Controls
 
             try
             {
-                Helper.SystemParametersInfoGet((uint)SPI.SPI_GETACTIVEWNDTRKTIMEOUT, 0, ref activeWindowTrkTimeout, 0);
+                activeWindowTrkTimeout = Helpers.GetActiveWindowDelay();
             }
             catch
             {
@@ -64,26 +64,27 @@ namespace X_Mouse_Controls
 
         private void SetValues()
         {
-            // Saving values
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWINDOWTRACKING, 0, windowTrackingValues.IsTrackingEnabled, 1);
+                Helpers.SetActiveWindowTracking(windowTrackingValues.IsTrackingEnabled);
             }
             catch
             {
                 MessageBox.Show("Failed to set active window tracking value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKZORDER, 0, windowTrackingValues.IsRaisingEnabled, 1);
+                Helpers.SetActiveWindowRaising(windowTrackingValues.IsRaisingEnabled);
             }
             catch
             {
                 MessageBox.Show("Failed to set active window raising value.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
             try
             {
-                Helper.SystemParametersInfoSet((uint)SPI.SPI_SETACTIVEWNDTRKTIMEOUT, 0, (uint)windowTrackingValues.Delay, 1);
+                Helpers.SetActiveWindowDelay((uint)windowTrackingValues.Delay);
             }
             catch
             {
@@ -91,9 +92,24 @@ namespace X_Mouse_Controls
             }
         }
 
+        private void ApplyValues()
+        {
+            pauseRefresh = true;
+            SetValues();
+            pauseRefresh = false;
+        }
+
+        private void RefreshValues()
+        {
+            if (pauseRefresh != true)
+            {
+                GetValues();
+            }
+        }
+
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            // Not looking very nice, but it's a workaround for standalone applications
+            // Not looking very nice, but it's a workaround for standalone applications.
             // https://laurenlavoie.com/avalon/159
             Uri uri = ((Hyperlink)sender).NavigateUri;
             Process.Start(new ProcessStartInfo(uri.ToString()));
@@ -103,12 +119,12 @@ namespace X_Mouse_Controls
         #region Events
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            GetValues();
+            RefreshValues();
         }
 
         private void applyButton_Click(object sender, RoutedEventArgs e)
         {
-            SetValues();
+            ApplyValues();
         }
 
         private void delayTextbox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
@@ -117,11 +133,31 @@ namespace X_Mouse_Controls
 
             if (!uint.TryParse(delayTextbox.Text, out delay))
             {
-                delayTextbox.Text = delay.ToString();
+                //delayTextbox.Text = delay.ToString();
+                windowTrackingValues.Delay = delay;
             }
         }
         #endregion
 
-        private readonly WindowTrackingValues windowTrackingValues;
+        #region Windows Messaging
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
+            source.AddHook(WndProc);
+        }
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            switch (msg)
+            {
+                case (int)WM.SETTINGCHANGE:
+                    RefreshValues();
+                    break;
+            }
+
+            return IntPtr.Zero;
+        }
+        #endregion
     }
 }
