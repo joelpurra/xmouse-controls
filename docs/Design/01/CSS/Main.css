@@ -173,7 +173,7 @@ a.button:active
 	text-align: center;
 }
 
-#download-latest-wrapper > a
+#download-latest-wrapper a:first-of-type
 {
 	display: inline-block;
 	text-align: center;
