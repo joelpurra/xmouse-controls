@@ -10,7 +10,7 @@
     Topmost="True"
     Margin="3"
     WindowStartupLocation="CenterScreen"
-    Icon="pack://application:,,,/X-Mouse Controls.ico">
+    Icon="pack://application:,,,/Resources/X-Mouse Controls.ico">
     <StackPanel
         VerticalAlignment="Center"
         Margin="20"

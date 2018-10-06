@@ -63,9 +63,9 @@ namespace XMouseControls.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon MainWindow {
+        internal static System.Drawing.Icon X_Mouse_Controls {
             get {
-                object obj = ResourceManager.GetObject("MainWindow", resourceCulture);
+                object obj = ResourceManager.GetObject("X_Mouse_Controls", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
