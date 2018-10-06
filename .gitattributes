@@ -1,5 +1,7 @@
 * text=auto
 
+.gitattributes text eol=lf
+
 *.sln text eol=crlf
 *.csproj text eol=crlf
 *.cs text eol=crlf
@@ -12,3 +14,7 @@
 *.settings text eol=crlf
 *.config text eol=crlf
 *.txt text eol=crlf
+*.svg text eol=lf
+*.sh text eol=lf
+*.asc text eol=lf
+

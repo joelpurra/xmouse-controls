@@ -1,12 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+// <copyright file="WindowTrackingValues.cs" company="Joel Purra">
+// X-Mouse Controls by Joel Purra
+// Copyright © 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+// All rights reserved. Released under GNU General Public License version 3.0 (GPL-3.0).
+//
+// - https://joelpurra.com/projects/X-Mouse_Controls/
+// - https://github.com/joelpurra/xmouse-controls
+// - https://joelpurra.com/
+// - https://www.gnu.org/licenses/
+// </copyright>
 
-namespace X_Mouse_Controls
+#pragma warning disable SA1600 // Elements must be documented
+namespace XMouseControls
 {
-    public class WindowTrackingValues
+    using System;
+    using System.ComponentModel;
+
+    internal class WindowTrackingValues : INotifyPropertyChanged
     {
+        public const double MinimumDelay = 0u;
+        public const double DefaultDelay = 500u;
+        public const double MaximumDelay = 2500u;
+
+        private double delay;
+        private bool isRaisingEnabled;
+        private bool isTrackingEnabled;
+
         public WindowTrackingValues()
             : this(false, false, DefaultDelay)
         {
@@ -19,29 +37,57 @@ namespace X_Mouse_Controls
             this.Delay = delay;
         }
 
-        public bool IsTrackingEnabled { get; set; }
-        public bool IsRaisingEnabled { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        private double delay;
-        public double Delay
+        public bool IsTrackingEnabled
         {
-            get
-            {
-                return delay;
-            }
+            get => this.isTrackingEnabled;
             set
             {
-                delay = GetDelayInRange(value);
+                if (this.isTrackingEnabled != value)
+                {
+                    this.isTrackingEnabled = value;
+                    this.OnPropertyChanged(nameof(this.IsTrackingEnabled));
+                }
             }
         }
 
-        public static double GetDelayInRange(double delay)
+        public bool IsRaisingEnabled
+        {
+            get => this.isRaisingEnabled;
+            set
+            {
+                if (this.isRaisingEnabled != value)
+                {
+                    this.isRaisingEnabled = value;
+                    this.OnPropertyChanged(nameof(this.IsRaisingEnabled));
+                }
+            }
+        }
+
+        public double Delay
+        {
+            get => this.delay;
+            set
+            {
+                double newDelay = GetDelayInRange(value);
+
+                if (this.delay != newDelay)
+                {
+                    this.delay = newDelay;
+                    this.OnPropertyChanged(nameof(this.Delay));
+                }
+            }
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private static double GetDelayInRange(double delay)
         {
             return Math.Max(MinimumDelay, Math.Min(delay, MaximumDelay));
         }
-
-        public static readonly double MinimumDelay = 0u;
-        public static readonly double DefaultDelay = 500u;
-        public static readonly double MaximumDelay = 2500u;
     }
 }
