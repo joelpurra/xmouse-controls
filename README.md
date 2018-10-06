@@ -18,8 +18,8 @@
 - [Source code on github](https://github.com/joelpurra/xmouse-controls)
 
 <p align="center">
-  <a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="https://joelpurra.com/projects/X-Mouse_Controls/Screenshots/x-mouse_controls_main_window_2010-04-03_1155_01.png" alt="Screenshot of the main window of X-Mouse Controls from 2010-04-03 11:55." /><br />
-  <em>Screenshot of the main window.</em></a>
+  <a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="./docs/Screenshots/x-mouse_controls_main_window_2018-10-06T1730z_01.png" width="409" height="238" alt="Screenshot of the main window of X-Mouse Controls, running on Windows 10." /><br />
+  <em>Screenshot of the main window, running on Windows 10.</em></a>
 </p>
 
 
