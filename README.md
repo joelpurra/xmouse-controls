@@ -1,6 +1,11 @@
-# [X-Mouse Controls](https://joelpurra.com/projects/X-Mouse_Controls/)
+<p align="center">
+  <a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="./website/Design/02/Images/icon/xmouse-controls-2048x2048.png" width="256" height="256" alt="X-Mouse Controls logotype, an active window below a greyed out window." /></a></p>
 
-<p class="donate">
+<h1 align="center">
+  <a href="https://joelpurra.com/projects/X-Mouse_Controls/">X-Mouse Controls</a>
+</h1>
+
+<p class="donate" align="center">
   <a href="https://joelpurra.com/donate/proceed/?amount=5&currency=usd"><kbd>Donate $5 now</kbd></a>
   <a href="https://joelpurra.com/donate/proceed/?amount=25&currency=usd"><kbd>Donate $25 now</kbd></a>
   <a href="https://joelpurra.com/donate/proceed/?amount=100&currency=usd&invoice=true"><kbd>Donate $100 now</kbd></a>
@@ -12,8 +17,10 @@
 - [Project site with downloads](https://joelpurra.com/projects/X-Mouse_Controls/)
 - [Source code on github](https://github.com/joelpurra/xmouse-controls)
 
-<a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="https://joelpurra.com/projects/X-Mouse_Controls/Screenshots/x-mouse_controls_main_window_2010-04-03_1155_01.png" alt="Screenshot of the main window of X-Mouse Controls from 2010-04-03 11:55." />  
-*Screenshot of the main window.*</a>
+<p align="center">
+  <a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="https://joelpurra.com/projects/X-Mouse_Controls/Screenshots/x-mouse_controls_main_window_2010-04-03_1155_01.png" alt="Screenshot of the main window of X-Mouse Controls from 2010-04-03 11:55." /><br />
+  <em>Screenshot of the main window.</em></a>
+</p>
 
 
 
