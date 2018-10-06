@@ -28,4 +28,4 @@
 
 
 
-[X-Mouse Controls](https://joelpurra.com/projects/X-Mouse_Controls/) Copyright &copy; 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 [Joel Purra](https://joelpurra.com/). Released under [GNU General Public License version 3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl.html). [Your donations are appreciated!](https://joelpurra.com/donate/)
+[X-Mouse Controls](https://joelpurra.com/projects/X-Mouse_Controls/) Copyright &copy; 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018 [Joel Purra](https://joelpurra.com/). Released under [GNU General Public License version 3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl.html). [Your donations are appreciated!](https://joelpurra.com/donate/)
