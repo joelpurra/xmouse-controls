@@ -1,6 +1,6 @@
 // <copyright file="AssemblyInfo.cs" company="Joel Purra">
 // X-Mouse Controls by Joel Purra
-// Copyright © 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+// Copyright © 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 // All rights reserved. Released under GNU General Public License version 3.0 (GPL-3.0).
 //
 // - https://joelpurra.com/projects/X-Mouse_Controls/
@@ -22,7 +22,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Joel Purra, https://joelpurra.com/")]
 [assembly: AssemblyProduct("X-Mouse Controls, https://joelpurra.com/projects/X-Mouse_Controls/")]
-[assembly: AssemblyCopyright("Copyright © Joel Purra 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018")]
+[assembly: AssemblyCopyright("Copyright © Joel Purra 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
