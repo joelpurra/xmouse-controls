@@ -71,7 +71,7 @@
 				When multiple programs are running on a Windows operating system, the default mode of operations is that you click one window after another to give them focus for keyboard inputs. With the x-mouse settings that click is not necessary &mdash; the only thing needed is to move your cursor over the window for it to become active.
 			</p>
 			<p>
-				This behavior has been possible, but disabled, in different versions of Windows for years. It is usually enabled through Windows accesiblity settings or a wide variety of tools and utilities, most notably Tweak UI found in Microsoft PowerToys. However, Tweak UI does not run on Windows&nbsp;Vista, Windows&nbsp;7, Windows&nbsp;8, Windows&nbsp;10, Windows&nbsp;Server&nbsp;2008, Windows&nbsp;Server&nbsp;2012, and later versions, which is why I created this utility.
+				This behavior has been possible, but disabled, in different versions of Windows for years. It is usually enabled through Windows accessibility settings or a wide variety of tools and utilities, most notably Tweak UI found in Microsoft PowerToys. However, Tweak UI does not run on Windows&nbsp;Vista, Windows&nbsp;7, Windows&nbsp;8, Windows&nbsp;10, Windows&nbsp;11, Windows&nbsp;Server&nbsp;2008, Windows&nbsp;Server&nbsp;2012, and later versions, which is why I created this utility.
 			</p>
 
 			<h2>
@@ -109,7 +109,7 @@
 					Active tracking delay
 				</dt>
 				<dd>
-					The delay, in milliseconds, until the window focus changes. This program allows settings from 0 milliseconds (instant focus) to 2500 milliseconds (very long delay). A value of 100—300 ms is recommend to avoid windows stealing focus too fast. <a href="#usage">See usage.</a>
+					The delay in milliseconds (ms), until the window focus changes. This program allows settings from 0 milliseconds (instant focus) to 2500 milliseconds (very long delay). A value of 100—300 milliseconds is recommend to avoid windows stealing focus too fast. <a href="#usage">See usage.</a>
 				</dd>
 				<dt>
 					Apply
@@ -127,13 +127,19 @@
 					X-Mouse Controls does not require installation. You only need to run it once to change settings; all applied changes are persisted immediately.
 				</li>
 				<li>
-					If windows and menus disappear before using them, try increasing the delay. A delay of 100—300 is recommended, depending on how fast you move the mouse cursor.
+					If windows and menus disappear before using them, try increasing the delay. A delay of 100—300 milliseconds is recommended, depending on how fast you move the mouse cursor.
 				</li>
 				<li>
 					To work around some window raising and menu problems, click and hold your left mouse button on an empty (unresponsive) area, drag the cursor to where you want to focus, and let go.
 				</li>
 				<li>
 					Active window raising can be problematic when some programs/windows completely overlap others, especially in combination with a low delay. Try turning off active window raising.
+				</li>
+				<li>
+					If using a <a href="https://account.microsoft.com/account">Microsoft Account</a> to log in to Windows, the active window tracking settings are synchronized to other machines using the same account. This is because the settings are part of Windows, and X-Mouse Controls merely lets you conveniently change them.
+				</li>
+				<li>
+					You can <a href="https://github.com/joelpurra/xmouse-controls/issues?q=">find more tips in the Github issues</a>.
 				</li>
 			</ul>
 
@@ -255,19 +261,19 @@
 			</h2>
 			<ul>
 				<li>
-					<a href="https://github.com/joelpurra/xmouse-controls/issues">Report issues on github</a> or <a href="https://joelpurra.com/contact/">contact the developer with questions directly</a>.
+					<a href="https://github.com/joelpurra/xmouse-controls/issues?q=">Report issues on github</a> or <a href="https://joelpurra.com/contact/">contact the developer</a>.
 				</li>
 				<li>
-					In order to avoid X-Mouse Controls being buried below other windows while exprimenting with the settings, it will always stay on top of other windows. Minimize first to test window raising.
+					In order to avoid X-Mouse Controls being buried below other windows while experimenting with the settings, it will always stay on top of other windows. Minimize first to test window raising.
 				</li>
 				<li>
-					Uninstallation is easy — just delete the X-Mouse Control files. Optionally run the program to turn off active window tracking first, as the settings are persisted.
+					Uninstallation is easy — just delete the X-Mouse Control files. Optionally run the program to turn off active window tracking first, as the settings are persisted automatically by Windows.
 				</li>
 				<li>
 					Some applications, especially those with a <a href="https://en.wikipedia.org/wiki/Multiple_document_interface">Multiple Document Interface</a>, may raise their own window even though the feature is disabled. <a href="#usage">See usage.</a>
 				</li>
 				<li>
-					What is known as x-mouse on Windows is different from <a href="https://en.wikipedia.org/wiki/Xmouse">Xmouse</a> on other systems. On Windows, it is closer to the <a href="https://en.wikipedia.org/wiki/X_Window_System">X Window System (X11)</a> setting <a href="https://en.wikipedia.org/wiki/Focus_(computing)#Focus_follows_pointer"><em>focus follows mouse</em> (FFM)</a> or <em>focus follows pointer</em>.
+					What is known as x-mouse on Windows is different from <a href="https://en.wikipedia.org/wiki/Xmouse">Xmouse</a> on other systems, such as Unix and Linux variants. On Windows, it is closer to the <a href="https://en.wikipedia.org/wiki/X_Window_System">X Window System (X11)</a> setting <a href="https://en.wikipedia.org/wiki/Focus_(computing)#Focus_follows_pointer"><em>focus follows mouse</em> (FFM)</a> or <em>focus follows pointer</em>.
 				</li>
 				<li>
 					Requires <a href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation">Windows Presentation Foundation</a>, which is included in <a href="https://en.wikipedia.org/wiki/.NET_Framework_version_history#.NET_Framework_3.5">.NET Framework 3.5</a> and <a href="https://en.wikipedia.org/wiki/.NET_Framework_version_history#.NET_Framework_4">.NET Framework 4</a>. One of them is most likely already installed on your system.
@@ -381,7 +387,7 @@
 				About the author
 			</h2>
 			<p>
-				<a href="https://joelpurra.se/">Joel Purra</a> is a <a href="https://joelpurra.com/cv/">software engineer</a> working on both <a href="https://joelpurra.com/portfolio/">commercial</a> and <a href="https://joelpurra.com/projects/">open source projects</a>. He is <a href="https://joelpurra.com/services/">available for consulting work</a>.
+				<a href="https://joelpurra.com/">Joel Purra</a> is a <a href="https://joelpurra.com/cv/">software engineer</a> working on both commercial and <a href="https://joelpurra.com/projects/">open source projects</a>. He is <a href="https://joelpurra.com/services/">available for consulting work</a>.
 			</p>
 
 			<h2>
@@ -504,7 +510,7 @@
 				Registry hacks
 			</h3>
 			<p>
-				Direct edititing of the registry for x-mouse values is considered a bad thing, as there are API calls which do this correctly and apply the results right away &mdash; with X-Mouse Controls there is no need to log out and in, or restart your computer. The following words are only here to help others searching for a tool that makes an inactive window active by hovering: <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Mouse\ActiveWindowTracking</code>, <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Desktop\ActiveWindowTracking</code>, <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Desktop\ActiveWndTrkTimeout</code>, <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Desktop\UserPreferencesMask</code>, <code>REG_DWORD</code>, <code>REG_BINARY</code>.
+				Direct editing of the registry for x-mouse values is considered a bad thing, as there are API calls which do this correctly and apply the results right away &mdash; with X-Mouse Controls there is no need to log out and in, or restart your computer. The following words are only here to help others searching for a tool that makes an inactive window active by hovering: <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Mouse\ActiveWindowTracking</code>, <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Desktop\ActiveWindowTracking</code>, <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Desktop\ActiveWndTrkTimeout</code>, <code>HKEY_CURRENT_USER\Control&nbsp;Panel\Desktop\UserPreferencesMask</code>, <code>REG_DWORD</code>, <code>REG_BINARY</code>.
 			</p>
 
 			<h3>
