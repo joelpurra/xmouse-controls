@@ -91,7 +91,7 @@
                 <TextBlock
                     TextWrapping="WrapWithOverflow"
                     Margin="3">
-                    Windows utility to enable or disable active window tracking, raising, and also the delay in milliseconds. This is known as x-mouse behavior, or focus follows mouse.
+                    Microsoft Windows utility to manage the active window tracking/raising settings. This is known as x-mouse behavior or focus follows mouse on Unix and Linux systems.
                 </TextBlock>
 
                 <TextBlock

@@ -18,7 +18,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("X-Mouse Controls")]
-[assembly: AssemblyDescription("Windows utility to enable or disable active window tracking, raising and also the delay in milliseconds. This is known as x-mouse behavior or focus follows mouse.")]
+[assembly: AssemblyDescription("Microsoft Windows utility to manage the active window tracking/raising settings. This is known as x-mouse behavior or focus follows mouse on Unix and Linux systems.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Joel Purra, https://joelpurra.com/")]
 [assembly: AssemblyProduct("X-Mouse Controls, https://joelpurra.com/projects/X-Mouse_Controls/")]

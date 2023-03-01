@@ -5,7 +5,7 @@
   <a href="https://joelpurra.com/projects/X-Mouse_Controls/">X-Mouse Controls</a>
 </h1>
 
-*Windows utility to enable or disable active window tracking, raising and also the delay in milliseconds. This is known as x-mouse behavior or focus follows mouse.*
+Microsoft Windows utility to manage the *active window tracking/raising* settings. This is known as *x-mouse behavior* or *focus follows mouse* on Unix and Linux systems.
 
 - [Project site with downloads](https://joelpurra.com/projects/X-Mouse_Controls/)
 - [Source code on github](https://github.com/joelpurra/xmouse-controls)
