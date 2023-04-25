@@ -20,7 +20,7 @@ html {
     box-sizing: inherit;
 }
 
-details > * {
+details>* {
     /* NOTE: the details element seems to reset to content-box, without any obvious reason why. Tested using the inspector in chrome 94. */
     box-sizing: border-box;
 }
@@ -38,28 +38,30 @@ body {
     font-size: 100%;
 }
 
-div#wrapper
-{
+div#wrapper {
     margin-top: 2em;
     margin-bottom: 2em;
     margin-left: 10%;
     margin-right: 10%;
 }
+
 img,
 svg {
     max-width: 100%;
 }
-svg#logo
-{
+
+svg#logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
 @media (prefers-color-scheme: light) {
     svg#logo path:nth-of-type(2) {
         /* NOTE: use default values. */
     }
 }
+
 @media (prefers-color-scheme: dark) {
     svg#logo path:nth-of-type(2) {
         outline: 0.1px solid rgba(127, 127, 127, 0.5);
@@ -80,19 +82,19 @@ h4,
 h5 {
     margin-top: 2em;
 }
-h1
-{
+
+h1 {
     margin-top: 0.5em;
     text-align: center;
 }
-h2
-{
+
+h2 {
     border-bottom-color: rgba(127, 127, 127, 0.5);
     border-bottom-width: 1px;
     border-bottom-style: solid;
 }
-footer
-{
+
+footer {
     margin-top: 2em;
     margin-bottom: 1em;
     padding-top: 1em;
@@ -123,9 +125,11 @@ kbd {
     border-width: 1px;
     margin: 0;
 }
+
 code {
     border-radius: 0.1em;
 }
+
 kbd {
     border-radius: 0.3em;
 }
@@ -173,40 +177,40 @@ table tfoot tr:first-of-type td {
     border-top: 2px solid rgba(127, 127, 127, 0.5);
 }
 
-#download-latest-wrapper a.button
-{
+#download-latest-wrapper a.button {
     margin-top: 0;
     margin-bottom: 0.3em;
     margin-left: 0;
     margin-right: 0.3em;
     background-image: linear-gradient(rgba(127, 127, 127, 0.3), rgba(127, 127, 127, 0.1));
-    border-color:rgba(127, 127, 127, 0.5);
+    border-color: rgba(127, 127, 127, 0.5);
     border-radius: 0.3em;
     border-style: solid;
     border-width: 0.1em;
 }
-#download-latest-wrapper a.button:hover
-{
-  border-color:rgba(127, 127, 127, 0.6);
+
+#download-latest-wrapper a.button:hover {
+    border-color: rgba(127, 127, 127, 0.6);
 
 }
-#download-latest-wrapper a.button:active
-{
-  border-color:rgba(127, 127, 127, 0.8);
+
+#download-latest-wrapper a.button:active {
+    border-color: rgba(127, 127, 127, 0.8);
 }
+
 #download-latest-wrapper {
     text-align: center;
 }
-#download-latest-wrapper > a
-{
+
+#download-latest-wrapper>a {
     display: inline-block;
     text-align: center;
     font-size: 2em;
     padding: 0.75em;
     border-radius: 10px;
 }
-#download-latest-wrapper span
-{
+
+#download-latest-wrapper span {
     display: block;
 }
 
@@ -225,8 +229,8 @@ table tfoot tr:first-of-type td {
 }
 
 pre.block-with-overflow-y-scroll {
-  background-color: rgba(127, 127, 127, 0.2);
-  border-radius: 0.2em;
-  padding: 1em;
-  overflow-y: scroll;
+    background-color: rgba(127, 127, 127, 0.2);
+    border-radius: 0.2em;
+    padding: 1em;
+    overflow-y: scroll;
 }
