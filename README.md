@@ -9,6 +9,7 @@ Microsoft Windows utility to manage the *active window tracking/raising* setting
 
 - [Project site with downloads](https://joelpurra.com/projects/X-Mouse_Controls/)
 - [Source code on github](https://github.com/joelpurra/xmouse-controls)
+-  [Chocolatey package](https://community.chocolatey.org/packages/xmouse-controls): `choco install xmouse-controls`
 
 <p align="center">
   <a href="https://joelpurra.com/projects/X-Mouse_Controls/"><img src="./docs/Screenshots/x-mouse_controls_main_window_2018-10-06T1730z_01.png" width="409" height="238" alt="Screenshot of the main window of X-Mouse Controls, running on Windows 10." /><br />
