@@ -52,13 +52,16 @@
 			<p>
 				Microsoft Windows utility to manage the <em>active window tracking/raising</em> settings. This is known as <em>x-mouse behavior</em> or <em>focus follows mouse</em> on Unix and Linux systems.
 			</p>
+			<p>
+				Works on Windows&nbsp;11, Windows&nbsp;10, Windows&nbsp;8, Windows&nbsp;7, Windows&nbsp;Vista, Windows&nbsp;XP, Windows&nbsp;Server&nbsp;2012, Windows&nbsp;Server&nbsp;2008, Windows&nbsp;Server&nbsp;2003. Might work on other versions as well.
+			</p>
 			<p id="download-latest-wrapper">
 				<a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_release.zip" class="button">
 					Download latest version
 				</a>
 			</p>
 			<p>
-				Works on Windows&nbsp;11, Windows&nbsp;10, Windows&nbsp;8, Windows&nbsp;7, Windows&nbsp;Vista, Windows&nbsp;XP, Windows&nbsp;Server&nbsp;2012, Windows&nbsp;Server&nbsp;2008, Windows&nbsp;Server&nbsp;2003. Might work on other versions as well.
+				Alteratively, install the <a href="https://community.chocolatey.org/packages/xmouse-controls">Chocolatey package</a>: <code>choco install xmouse-controls</code>
 			</p>
 			<div class="note">
 				<p>
@@ -327,25 +330,45 @@
 				Preferably test any changes on both Windows 10 and Windows 11, as both have a lot of users and <a href="https://en.wikipedia.org/wiki/Windows_10#Market_share_and_sales">high market share (January 2023)</a> (<a href="https://gs.statcounter.com/os-version-market-share/windows/desktop/worldwide">more up-to-date data source</a>).
 			</p>
 
-			<h2>
-				History and downloads
-			</h2>
-			<dl>
-				<dt>
-					v1.1.0.0 (2018-10-06 19:30 CET)
-				</dt>
-				<dd>
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_release.zip">Download</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_release.zip.asc">pgp signature</a>). See also
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_source.zip">Source code</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_source.zip.asc">pgp signature</a>),
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_debug.zip">Debug build</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_debug.zip.asc">pgp signature</a>).
-				</dd>
-				<dd>
+			<section>
+				<h2>
+					History and downloads
+				</h2>
+				<p>
+					As an alternative to manual zip file unpacking, install the <a href="https://community.chocolatey.org/packages/xmouse-controls">Chocolatey package</a>: <code>choco install xmouse-controls</code>
+				</p>
+				<p>
+					Downloads are signed using <a href="https://joelpurra.com/contact/">Joel Purra's OpenPGP key</a> <code>4C47B4FF173AE6ED0DB733946DF6890D2A977668</code>. To verify the authenticity, use an OpenPGP-compliant tool such as <a href="https://en.wikipedia.org/wiki/GNU_Privacy_Guard">GNU Privacy Guard</a> (GnuPG, GPG).
+				</p>
+
+				<h3>
+					v1.1.0.0
+				</h3>
+				<p>
+					<time datetime="2018-10-06 19:30 CET">Released 2018-10-06 19:30 CET.</time>
+
+					<details>
+						<summary>Downloads</summary>
+						<dl>
+							<dt>Release build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_release.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_release.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_release.zip.sha256">Zip file SHA256 checksum</a>: <code>6f253790111422361a38f049854aca34f51c03e4c06bab47f9c73b8da9390191</code></dd>
+							<dt>Debug build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_debug.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_debug.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_debug.zip.sha256">Zip file SHA256 checksum</a>: <code>15f35391b93c8f0d15175dbe5455c7842e63e66ba52ab075ef2f8fca3cd1a3f0</code></dd>
+							<dt>Source code</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_source.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_source.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2018-10-06T1730Z/x-mouse_controls_2018-10-06T1730Z_source.zip.sha256">Zip file SHA256 checksum</a>: <code>4be491c7bb04e5dd8b29192ff9b9452179954c159c276b66ce63fbf2968a59af</code></dd>
+						</dl>
+					</details>
+				</p>
+				<p>
 					<ul>
 						<li>
 							Minimize the main window. Requested in <a href="https://github.com/joelpurra/xmouse-controls/issues/5">#5</a> by <a href="https://github.com/bitofhope">bitofhope<a>. Fixed in <a href="https://github.com/joelpurra/xmouse-controls/pull/6">#6</a>, thank you <a href="https://github.com/binki">Nathan Phillip Brink</a>!
 						</li>
 						<li>
-							Can run on Windows 10 without downloading .NET Framework 3.5. Both request in <a href="https://github.com/joelpurra/xmouse-controls/issues/11">#11</a> and fixed in <a href="https://github.com/joelpurra/xmouse-controls/pull/12">#12</a> by <a href="https://github.com/binki">Nathan Phillip Brink</a>, thank you!
+							Can run on Windows 10 without downloading .NET Framework 3.5. Both requested in <a href="https://github.com/joelpurra/xmouse-controls/issues/11">#11</a> and fixed in <a href="https://github.com/joelpurra/xmouse-controls/pull/12">#12</a> by <a href="https://github.com/binki">Nathan Phillip Brink</a>, thank you!
 						</li>
 						<li>
 							More usage information and tips in the main window.
@@ -356,55 +379,100 @@
 						<li>
 							Update icon to depict a focused window below an unfocused window (instead of a focused window on top of an unfocused window). Graphics were updated by <a href="https://miroslavajovicic.net/">Miroslava Jovičić</a>, thank you!
 						</li>
+						<li>
+							<time datetime="2023-04-23T16:10:42Z" title="2023-04-23T16:10:42Z">In April 2023</time>, a <a href="https://community.chocolatey.org/packages/xmouse-controls">package for X-Mouse Controls</a> was published on <a href="https://chocolatey.org/">Chocolatey</a>. Credit goes to <a href="https://github.com/BatmanAoD">@BatmanAoD</a> for both taking the initiative in <a href="https://github.com/joelpurra/xmouse-controls/issues/25">#25</a> and <a href="https://github.com/BatmanAoD/xmouse-choco-pkg">maintaining the package</a>, thank you!
+						</li>
 					</ul>
-				</dd>
+				</p>
 
-				<dt>
-					v1.0.1.0 (2012-08-12 20:30 EST)
-				</dt>
-				<dd>
-					<a href="https://github.com/joelpurra/xmouse-controls">Source code</a>
-				</dd>
-				<dd>
-					No changes, but the <a href="https://github.com/joelpurra/xmouse-controls">source code is now release on github</a> under the <a href="https://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.
-				</dd>
+				<article>
+					<h3>
+						v1.0.1.0
+					</h3>
+					<p>
+						<time datetime="2010-04-03 11:55 CET">Released 2010-04-03 11:55 CET.</time>
 
-				<dt>
-					v1.0.1.0 (2010-04-03 11:55 CET)
-				</dt>
-				<dd>
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.zip">Download</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.zip.asc">pgp signature</a>). See also
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.zip">Source code</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.zip.asc">pgp signature</a>),
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.zip">Debug build</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.zip.asc">pgp signature</a>).
-				</dd>
-				<dd>
-					Allows for manual input of the delay, new web site links, using more bindings.
-				</dd>
+						<details>
+							<summary>Downloads</summary>
+							<dl>
+								<dt>Release build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.zip">Zip file</a></dd>
+								<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.zip.asc">Zip file OpenPGP signature</a></dd>
+								<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_release.zip.sha256">Zip file SHA256 checksum</a>: <code>dc3b464cf4583aa3fc647647d5e3de5581736c5c004505d14f9e6294aee39e28</code></dd>
+								<dt>Debug build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.zip">Zip file</a></dd>
+								<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.zip.asc">Zip file OpenPGP signature</a></dd>
+								<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_debug.zip.sha256">Zip file SHA256 checksum</a>: <code>4adeceb406b62e1bc3471a849bf20cb7fce1490902ab551d37561b4bd8a2b6b8</code></dd>
+								<dt>Source code</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.zip">Zip file</a></dd>
+								<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.zip.asc">Zip file OpenPGP signature</a></dd>
+								<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2010-04-03_1155/x-mouse_controls_2010-04-03_1155_source.zip.sha256">Zip file SHA256 checksum</a>: <code>75f8f79c86e36855fca7435104062fa2eaccacc938f176e8ea0a51578e6057cc</code></dd>
+							</dl>
+						</details>
+					</p>
+					<ul>
+						<li>
+							Allow manual input of the delay in milliseconds.
+						</li>
+						<li>
+							Using WPF bindings in more places.
+						</li>
+						<li>
+							New website links.
+						</li>
+						<li>
+							<time datetime="2012-08-12 20:30 EST" title="2012-08-12 20:30 EST">In August 2012</time>, the <a href="https://github.com/joelpurra/xmouse-controls">source code was released on github</a> under the <a href="https://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.
+						</li>
+					</ul>
+				</article>
 
-				<dt>
-					v1.0.0.1 (2007-12-27 16:44 CET)
-				</dt>
-				<dd>
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_release.zip">Download</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_release.zip.asc">pgp signature</a>). See also
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_source.zip">Source code</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_source.zip.asc">pgp signature</a>),
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_debug.zip">Debug build</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_debug.zip.asc">pgp signature</a>).
-				</dd>
-				<dd>
-					Disables the active window raising checkbox and delay slider when the active window tracking checkbox is not checked.
-				</dd>
+				<h3>
+					v1.0.0.1
+				</h3>
+				<p>
+					<time datetime="2007-12-27 16:44 CET">Released 2007-12-27 16:44 CET.</time>
 
-				<dt>
-					v1.0.0.0 (2007-12-27 14:04 CET)
-				</dt>
-				<dd>
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_release.zip">Download</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_release.zip.asc">pgp signature</a>). See also
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_source.zip">Source code</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_source.zip.asc">pgp signature</a>),
-					<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_debug.zip">Debug build</a> (<a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_debug.zip.asc">pgp signature</a>).
-				</dd>
-				<dd>
+					<details>
+						<summary>Downloads</summary>
+						<dl>
+							<dt>Release build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_release.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_release.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_release.zip.sha256">Zip file SHA256 checksum</a>: <code>ee828033899b46d7e2bcf6557f3614bd5bbb8410d93c23f90948bc0ca79728eb</code></dd>
+							<dt>Debug build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_debug.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_debug.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_debug.zip.sha256">Zip file SHA256 checksum</a>: <code>d7aaf13e8f68f877bdb20fdc719c5ee5b19bdc9a35cfacaa95fecdd1c1a8b75b</code></dd>
+							<dt>Source code</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_source.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_source.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1644/x-mouse_controls_2007-12-27_1644_source.zip.sha256">Zip file SHA256 checksum</a>: <code>aabbedf94cfde74771c0d16b2de79584b87d791d4556c9d2a20e359cc80037a2</code></dd>
+						</dl>
+					</details>
+				</p>
+				<p>
+					Disable the active window raising checkbox and delay slider when the active window tracking checkbox is not checked.
+				</p>
+
+				<h3>
+					v1.0.0.0
+				</h3>
+				<p>
+					<time datetime="2007-12-27 14:04 CET">Released 2007-12-27 14:04 CET.</time>
+
+					<details>
+						<summary>Downloads</summary>
+						<dl>
+							<dt>Release build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_release.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_release.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_release.zip.sha256">Zip file SHA256 checksum</a>: <code>2f5678915c89c9652fec4fd5eb2aa8c78a1c06e53b8184afc18906166674db75</code></dd>
+							<dt>Debug build</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_debug.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_debug.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_debug.zip.sha256">Zip file SHA256 checksum</a>: <code>337dd85b4937bf2ed7a63e7759b2fb436689826b32d1a7e05dd88f4831dc09a4</code></dd>
+							<dt>Source code</dt><dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_source.zip">Zip file</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_source.zip.asc">Zip file OpenPGP signature</a></dd>
+							<dd><a href="https://files.joelpurra.com/projects/x-mouse-controls/2007-12-27_1404/x-mouse_controls_2007-12-27_1404_source.zip.sha256">Zip file SHA256 checksum</a>: <code>5e9d3092a5fcea4ab21a5ab455fd19c9400e78731f502aed69b5db82832b533b</code></dd>
+						</dl>
+					</details>
+				</p>
+				<p>
 					First version, initial release.
-				</dd>
-			</dl>
+				</p>
+			</h3>
 
 			<h2>
 				About the author
