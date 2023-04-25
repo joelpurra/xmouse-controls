@@ -44,7 +44,12 @@
 	<div id="wrapper">
 		<main>
 			<a href="https://joelpurra.com/projects/X-Mouse_Controls/">
-				<img src="./Design/02/Images/icon/xmouse-controls-2048x2048.png" width="256" height="256" border="0" id="logo" alt="X-Mouse Controls logotype, an active window below a greyed out window." />
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 97" width="256" border="0" id="logo" alt="X-Mouse Controls logotype, an active window below a greyed out window.">
+					<path fill="#fff" d="M37 37h54v54H37z"/>
+					<path d="M86 42v44H42V42h44m10-10H32v64h64V32z"/>
+					<path fill="#f2f2f2" d="M5 5h54v54H5z"/>
+					<path d="M54 10v44H10V10h44M64 0H0v64h64V0z" fill="#999"/>
+				</svg>
 				<h1>
 					X-Mouse Controls
 				</h1>
@@ -83,7 +88,9 @@
 				Screenshots
 			</h2>
 			<figure>
-				<img src="./Screenshots/x-mouse_controls_main_window_2018-10-06T1730z_01.png" width="409" height="238" alt="Screenshot of the main window of X-Mouse Controls v1.1.0.0, running on Windows 10" />
+				<div class="on-white-background">
+					<img src="./Screenshots/x-mouse_controls_main_window_2018-10-06T1730z_01.png" width="409" alt="Screenshot of the main window of X-Mouse Controls v1.1.0.0, running on Windows 10" />
+				</div>
 				<figcaption>
 					The main window of X-Mouse Controls v1.1.0.0, running on Windows 10.
 				</figcaption>
@@ -95,14 +102,18 @@
 				</summary>
 
 				<figure>
-					<img src="./Screenshots/x-mouse_controls_main_window_2010-04-03_1155_01.png" width="287" height="266" alt="Screenshot of the main window of X-Mouse Controls v1.0.1.0, running on Windows 7" />
+					<div class="on-white-background">
+						<img src="./Screenshots/x-mouse_controls_main_window_2010-04-03_1155_01.png" width="287" alt="Screenshot of the main window of X-Mouse Controls v1.0.1.0, running on Windows 7" />
+					</div>
 					<figcaption>
 						The main window of X-Mouse Controls v1.0.1.0, running on Windows 7.
 					</figcaption>
 				</figure>
 
 				<figure>
-					<img src="./Screenshots/x-mouse_controls_main_window_2007-12-27_1404_01.png" width="298" height="247" alt="Screenshot of the main window of X-Mouse Controls v1.0.0.0, running on Windows Vista" />
+					<div class="on-white-background">
+						<img src="./Screenshots/x-mouse_controls_main_window_2007-12-27_1404_01.png" width="298" alt="Screenshot of the main window of X-Mouse Controls v1.0.0.0, running on Windows Vista" />
+					</div>
 					<figcaption>
 						The main window of X-Mouse Controls v1.0.0.0, running on Windows Vista. (Perhaps Windows 7?)
 					</figcaption>
@@ -271,7 +282,9 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<th scope="row"></th>
+						<th scope="row">
+							Price
+						</th>
 						<td>
 							Free!
 						</td>
@@ -613,7 +626,7 @@
 			<p>
 				X-Mouse settings do not "stick" [Thank you Joel Purra (e-mail removed)!]: TweakUI's Mouse tab -> "Activation follows mouse (X-Mouse)" box checked, and: TweakUI's General tab -> "X-Mouse AutoRaise" and "Mouse hot tracking effects" boxes checked. This can be fixed in some cases (reminiscent from the old XMouse MS Power Toy 95) by adding/changing these Win.ini entries under the [XMouse] section:
 			</p>
-			<pre>[XMouse]
+			<pre class="block-with-overflow-y-scroll">[XMouse]
 BringWindowToTop=1
 ConsoleWindowsOnly=1
 Delay=1</pre>
